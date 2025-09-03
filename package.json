@@ -8,7 +8,7 @@
     "start:dev": "npx nest start --watch",
     "start": "node dist/main",
     "start:prod": "npm run build && npm start",
-    "build": "npx nest build",
+    "build": "tsc -p tsconfig.build.json",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:e2e": "jest --config ./test/jest-e2e.json",
@@ -42,6 +42,7 @@
   "license": "MIT",
   "dependencies": {
     "@nestjs/apollo": "^13.1.0",
+    "@nestjs/cli": "^10.4.5",
     "@nestjs/common": "^11.1.6",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.1.6",
