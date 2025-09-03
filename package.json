@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
+    "dev": "npx nest start --watch",
     "start:dev": "npx nest start --watch",
     "start": "node dist/main",
     "start:prod": "npm run build && npm start",
@@ -14,6 +15,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "ci:test": "npm run build && npm run test:e2e",
     "ci:full": "ts-node scripts/ci-cd-runner.ts",
+    "ci:smart": "ts-node scripts/smart-ci-runner.ts",
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio",

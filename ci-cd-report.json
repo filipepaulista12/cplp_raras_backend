@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-09-03T09:03:25.368Z",
+  "timestamp": "2025-09-03T11:04:25.195Z",
   "summary": {
     "total_checks": 16,
     "passed": 4,
@@ -10,154 +10,154 @@
     {
       "component": "SERVER",
       "status": "FAIL",
-      "message": "Servidor não responde: FetchError: request to http://localhost:3001/api/status failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.300Z"
+      "message": "Servidor não responde: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.138Z"
     },
     {
       "component": "FILES",
       "status": "OK",
       "message": "Arquivo crítico presente: src/app.module.ts",
-      "timestamp": "2025-09-03T09:03:20.301Z"
+      "timestamp": "2025-09-03T11:04:20.139Z"
     },
     {
       "component": "FILES",
       "status": "OK",
       "message": "Arquivo crítico presente: src/main.ts",
-      "timestamp": "2025-09-03T09:03:20.302Z"
+      "timestamp": "2025-09-03T11:04:20.139Z"
     },
     {
       "component": "FILES",
       "status": "OK",
       "message": "Arquivo crítico presente: prisma/schema.prisma",
-      "timestamp": "2025-09-03T09:03:20.302Z"
+      "timestamp": "2025-09-03T11:04:20.139Z"
     },
     {
       "component": "FILES",
       "status": "OK",
       "message": "Arquivo crítico presente: database/gard_dev.db",
-      "timestamp": "2025-09-03T09:03:20.302Z"
+      "timestamp": "2025-09-03T11:04:20.139Z"
     },
     {
       "component": "DATABASE",
       "status": "FAIL",
-      "message": "Erro no banco: FetchError: request to http://localhost:3001/api/db-test failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.305Z"
+      "message": "Erro no banco: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.143Z"
     },
     {
       "component": "ENDPOINTS",
       "status": "FAIL",
-      "message": "/api/orphanet falhou: FetchError: request to http://localhost:3001/api/orphanet failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.308Z"
+      "message": "/api/orphanet falhou: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.146Z"
     },
     {
       "component": "ENDPOINTS",
       "status": "FAIL",
-      "message": "/api/orphanet/stats falhou: FetchError: request to http://localhost:3001/api/orphanet/stats failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.313Z"
+      "message": "/api/orphanet/stats falhou: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.147Z"
     },
     {
       "component": "ENDPOINTS",
       "status": "FAIL",
-      "message": "/api/hpo falhou: FetchError: request to http://localhost:3001/api/hpo failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.315Z"
+      "message": "/api/hpo falhou: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.149Z"
     },
     {
       "component": "ENDPOINTS",
       "status": "FAIL",
-      "message": "/api/hpo/stats falhou: FetchError: request to http://localhost:3001/api/hpo/stats failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.317Z"
+      "message": "/api/hpo/stats falhou: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.152Z"
     },
     {
       "component": "ENDPOINTS",
       "status": "FAIL",
-      "message": "/api/drugbank falhou: FetchError: request to http://localhost:3001/api/drugbank failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.318Z"
+      "message": "/api/drugbank falhou: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.154Z"
     },
     {
       "component": "ENDPOINTS",
       "status": "FAIL",
-      "message": "/api/drugbank/stats falhou: FetchError: request to http://localhost:3001/api/drugbank/stats failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.320Z"
+      "message": "/api/drugbank/stats falhou: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.156Z"
     },
     {
       "component": "ENDPOINTS",
       "status": "FAIL",
-      "message": "/api/cplp falhou: FetchError: request to http://localhost:3001/api/cplp failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.322Z"
+      "message": "/api/cplp falhou: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.159Z"
     },
     {
       "component": "ENDPOINTS",
       "status": "FAIL",
-      "message": "/api/cplp/countries falhou: FetchError: request to http://localhost:3001/api/cplp/countries failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.323Z"
+      "message": "/api/cplp/countries falhou: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.161Z"
     },
     {
       "component": "ENDPOINTS",
       "status": "FAIL",
-      "message": "/api/diseases falhou: FetchError: request to http://localhost:3001/api/diseases failed, reason: ",
-      "timestamp": "2025-09-03T09:03:20.325Z"
+      "message": "/api/diseases falhou: Error: Conexão falhou: ECONNREFUSED",
+      "timestamp": "2025-09-03T11:04:20.162Z"
     },
     {
       "component": "UNIT_TESTS",
       "status": "SKIP",
       "message": "Testes unitários não configurados",
-      "timestamp": "2025-09-03T09:03:25.367Z"
+      "timestamp": "2025-09-03T11:04:25.194Z"
     }
   ],
   "endpoint_tests": [
     {
       "name": "Endpoint /api/orphanet",
       "status": "FAIL",
-      "duration": 3,
-      "error": "FetchError: request to http://localhost:3001/api/orphanet failed, reason: "
+      "duration": 1,
+      "error": "Error: Conexão falhou: ECONNREFUSED"
     },
     {
       "name": "Endpoint /api/orphanet/stats",
       "status": "FAIL",
-      "duration": 5,
-      "error": "FetchError: request to http://localhost:3001/api/orphanet/stats failed, reason: "
+      "duration": 1,
+      "error": "Error: Conexão falhou: ECONNREFUSED"
     },
     {
       "name": "Endpoint /api/hpo",
       "status": "FAIL",
       "duration": 2,
-      "error": "FetchError: request to http://localhost:3001/api/hpo failed, reason: "
+      "error": "Error: Conexão falhou: ECONNREFUSED"
     },
     {
       "name": "Endpoint /api/hpo/stats",
       "status": "FAIL",
-      "duration": 2,
-      "error": "FetchError: request to http://localhost:3001/api/hpo/stats failed, reason: "
+      "duration": 3,
+      "error": "Error: Conexão falhou: ECONNREFUSED"
     },
     {
       "name": "Endpoint /api/drugbank",
       "status": "FAIL",
-      "duration": 1,
-      "error": "FetchError: request to http://localhost:3001/api/drugbank failed, reason: "
+      "duration": 2,
+      "error": "Error: Conexão falhou: ECONNREFUSED"
     },
     {
       "name": "Endpoint /api/drugbank/stats",
       "status": "FAIL",
       "duration": 2,
-      "error": "FetchError: request to http://localhost:3001/api/drugbank/stats failed, reason: "
+      "error": "Error: Conexão falhou: ECONNREFUSED"
     },
     {
       "name": "Endpoint /api/cplp",
       "status": "FAIL",
-      "duration": 2,
-      "error": "FetchError: request to http://localhost:3001/api/cplp failed, reason: "
+      "duration": 3,
+      "error": "Error: Conexão falhou: ECONNREFUSED"
     },
     {
       "name": "Endpoint /api/cplp/countries",
       "status": "FAIL",
-      "duration": 1,
-      "error": "FetchError: request to http://localhost:3001/api/cplp/countries failed, reason: "
+      "duration": 2,
+      "error": "Error: Conexão falhou: ECONNREFUSED"
     },
     {
       "name": "Endpoint /api/diseases",
       "status": "FAIL",
-      "duration": 2,
-      "error": "FetchError: request to http://localhost:3001/api/diseases failed, reason: "
+      "duration": 1,
+      "error": "Error: Conexão falhou: ECONNREFUSED"
     }
   ],
   "recommendations": [

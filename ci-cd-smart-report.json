@@ -1,0 +1,237 @@
+{
+  "timestamp": "2025-09-03T11:15:25.307Z",
+  "test_type": "Smart CI/CD with dedicated test server",
+  "server_port": 3002,
+  "summary": {
+    "total_checks": 27,
+    "passed": 27,
+    "failed": 0,
+    "warnings": 0
+  },
+  "system_health": [
+    {
+      "component": "SERVER",
+      "status": "OK",
+      "message": "Servidor teste respondendo na porta 3002",
+      "timestamp": "2025-09-03T11:15:25.172Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: src/app.module.ts",
+      "timestamp": "2025-09-03T11:15:25.174Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: src/main.ts",
+      "timestamp": "2025-09-03T11:15:25.174Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: prisma/schema.prisma",
+      "timestamp": "2025-09-03T11:15:25.174Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: database/gard_dev.db",
+      "timestamp": "2025-09-03T11:15:25.174Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: public/index.html",
+      "timestamp": "2025-09-03T11:15:25.174Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: package.json",
+      "timestamp": "2025-09-03T11:15:25.174Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: tsconfig.json",
+      "timestamp": "2025-09-03T11:15:25.174Z"
+    },
+    {
+      "component": "SCRIPTS",
+      "status": "OK",
+      "message": "Script 'build' configurado",
+      "timestamp": "2025-09-03T11:15:25.175Z"
+    },
+    {
+      "component": "SCRIPTS",
+      "status": "OK",
+      "message": "Script 'start' configurado",
+      "timestamp": "2025-09-03T11:15:25.175Z"
+    },
+    {
+      "component": "SCRIPTS",
+      "status": "OK",
+      "message": "Script 'dev' configurado",
+      "timestamp": "2025-09-03T11:15:25.175Z"
+    },
+    {
+      "component": "SCRIPTS",
+      "status": "OK",
+      "message": "Script 'ci:full' configurado",
+      "timestamp": "2025-09-03T11:15:25.175Z"
+    },
+    {
+      "component": "DATABASE",
+      "status": "OK",
+      "message": "Conexão com banco funcional",
+      "timestamp": "2025-09-03T11:15:25.186Z"
+    },
+    {
+      "component": "DATABASE",
+      "status": "OK",
+      "message": "Orphanet: 0 registros",
+      "timestamp": "2025-09-03T11:15:25.203Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/orphanet funcionando",
+      "timestamp": "2025-09-03T11:15:25.212Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/orphanet/stats funcionando",
+      "timestamp": "2025-09-03T11:15:25.224Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/hpo funcionando",
+      "timestamp": "2025-09-03T11:15:25.249Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/hpo/stats funcionando",
+      "timestamp": "2025-09-03T11:15:25.258Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/drugbank funcionando",
+      "timestamp": "2025-09-03T11:15:25.265Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/drugbank/stats funcionando",
+      "timestamp": "2025-09-03T11:15:25.273Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/cplp funcionando",
+      "timestamp": "2025-09-03T11:15:25.284Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/cplp/countries funcionando",
+      "timestamp": "2025-09-03T11:15:25.289Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/diseases funcionando",
+      "timestamp": "2025-09-03T11:15:25.294Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/health funcionando",
+      "timestamp": "2025-09-03T11:15:25.299Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "OK",
+      "message": "/api/status funcionando",
+      "timestamp": "2025-09-03T11:15:25.303Z"
+    },
+    {
+      "component": "BUILD",
+      "status": "OK",
+      "message": "Build gerado com sucesso",
+      "timestamp": "2025-09-03T11:15:25.303Z"
+    },
+    {
+      "component": "MODULES",
+      "status": "OK",
+      "message": "Todos os 7 módulos presentes",
+      "timestamp": "2025-09-03T11:15:25.304Z"
+    }
+  ],
+  "endpoint_tests": [
+    {
+      "name": "Endpoint /api/orphanet",
+      "status": "PASS",
+      "duration": 8
+    },
+    {
+      "name": "Endpoint /api/orphanet/stats",
+      "status": "PASS",
+      "duration": 12
+    },
+    {
+      "name": "Endpoint /api/hpo",
+      "status": "PASS",
+      "duration": 24
+    },
+    {
+      "name": "Endpoint /api/hpo/stats",
+      "status": "PASS",
+      "duration": 9
+    },
+    {
+      "name": "Endpoint /api/drugbank",
+      "status": "PASS",
+      "duration": 7
+    },
+    {
+      "name": "Endpoint /api/drugbank/stats",
+      "status": "PASS",
+      "duration": 8
+    },
+    {
+      "name": "Endpoint /api/cplp",
+      "status": "PASS",
+      "duration": 11
+    },
+    {
+      "name": "Endpoint /api/cplp/countries",
+      "status": "PASS",
+      "duration": 5
+    },
+    {
+      "name": "Endpoint /api/diseases",
+      "status": "PASS",
+      "duration": 5
+    },
+    {
+      "name": "Endpoint /health",
+      "status": "PASS",
+      "duration": 5
+    },
+    {
+      "name": "Endpoint /api/status",
+      "status": "PASS",
+      "duration": 4
+    }
+  ],
+  "recommendations": [
+    "✅ Sistema está funcionando perfeitamente!",
+    "🚀 Pronto para deploy em produção",
+    "📈 Considerar implementar monitoramento avançado"
+  ]
+}

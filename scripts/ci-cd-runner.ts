@@ -26,12 +26,20 @@ class CPLPTestRunner {
   async runFullSuite(): Promise<void> {
     console.log('🚀 CPLP-Raras CI/CD Interno Iniciado');
     console.log('=' .repeat(50));
+    
+    // Aguardar estabilização do servidor
+    console.log('⏳ Aguardando estabilização do servidor (5s)...');
+    await this.sleep(5000);
 
     await this.checkSystemHealth();
     await this.verifyDatabase();
     await this.testEndpoints();
     await this.runUnitTests();
     await this.generateReport();
+  }
+
+  private sleep(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
   private async checkSystemHealth(): Promise<void> {
@@ -149,12 +157,39 @@ class CPLPTestRunner {
   }
 
   private async makeRequest(url: string): Promise<any> {
-    const fetch = await import('node-fetch');
-    const response = await fetch.default(url);
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    try {
+      const fetch = await import('node-fetch');
+      
+      // Configurar timeout de 10 segundos
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
+      
+      const response = await fetch.default(url, {
+        signal: controller.signal,
+        headers: {
+          'User-Agent': 'CPLP-Raras-CI/1.0'
+        }
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      // Tentar parsejar como JSON, mas aceitar texto também
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        return response.json();
+      }
+      
+      return response.text();
+    } catch (error: any) {
+      if (error.name === 'AbortError') {
+        throw new Error(`Timeout: Servidor não respondeu em 10s`);
+      }
+      throw new Error(`Conexão falhou: ${error.code || error.message}`);
     }
-    return response.json();
   }
 
   private addSystemCheck(component: string, status: 'OK' | 'FAIL' | 'WARNING' | 'SKIP', message: string): void {
