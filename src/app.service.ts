@@ -57,4 +57,28 @@ export class AppService {
       };
     }
   }
+
+  getHealthCheck() {
+    try {
+      // Quick health check for deployment services
+      const uptime = process.uptime();
+      const memoryUsage = process.memoryUsage();
+      
+      return {
+        status: 'healthy',
+        uptime: `${Math.floor(uptime)}s`,
+        memory: {
+          rss: `${Math.round(memoryUsage.rss / 1024 / 1024)}MB`,
+          heapUsed: `${Math.round(memoryUsage.heapUsed / 1024 / 1024)}MB`
+        },
+        timestamp: new Date().toISOString()
+      };
+    } catch (error) {
+      return {
+        status: 'unhealthy',
+        error: error.message,
+        timestamp: new Date().toISOString()
+      };
+    }
+  }
 }

@@ -24,4 +24,10 @@ export class AppController {
   testDatabase() {
     return this.appService.testDatabase();
   }
+
+  @Get('health')
+  @ApiOperation({ summary: 'Health check for deployment services' })
+  healthCheck() {
+    return this.appService.getHealthCheck();
+  }
 }

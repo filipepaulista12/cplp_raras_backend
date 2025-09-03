@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start:dev": "nest start --watch",
+    "start:dev": "npx nest start --watch",
     "start": "node dist/main",
     "start:prod": "npm run build && npm start",
-    "build": "nest build",
+    "build": "npx nest build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:e2e": "jest --config ./test/jest-e2e.json",
