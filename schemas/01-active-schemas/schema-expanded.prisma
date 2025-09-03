@@ -1,0 +1,179 @@
+// NOVO SCHEMA EXPANDIDO COM MEDICAMENTOS
+// =====================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// =====================================================================================
+// 1. DOENÇAS ORPHANET (Existente)
+// =====================================================================================
+
+model OrphaDisease {
+  // Identificação Orphanet
+  id                    String    @id @default(uuid())
+  orphaNumber           String    @unique @map("orpha_number")       
+  orphaCode             String    @unique @map("orpha_code")         
+  
+  // Nomes multilíngues
+  preferredNameEn       String    @map("preferred_name_en")
+  preferredNamePt       String?   @map("preferred_name_pt")
+  synonymsEn            String?   
+  synonymsPt            String?   
+  
+  // Definições
+  definition            String?
+  
+  // Metadados
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+  
+  // Relacionamentos com medicamentos
+  drugAssociations      DrugDiseaseAssociation[]
+  
+  @@map("OrphaDisease")
+}
+
+// =====================================================================================
+// 2. TERMOS HPO (Existente)
+// =====================================================================================
+
+model HPOTerm {
+  id          String   @id @default(uuid())
+  hpo_id      String?  @unique @map("hpo_id")
+  name        String
+  definition  String?
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("HPOTerm")
+}
+
+// =====================================================================================
+// 3. MEDICAMENTOS DRUGBANK (NOVO!)
+// =====================================================================================
+
+model DrugBankDrug {
+  // Identificação única
+  id                    String    @id @default(uuid())
+  drugbank_id           String    @unique @map("drugbank_id")       
+  
+  // Informações básicas
+  name                  String                                      
+  generic_name          String?   @map("generic_name")             
+  brand_names           String?   // JSON array
+  
+  // Classificação
+  drug_type             String?   @map("drug_type")                
+  indication            String?                                    
+  mechanism_action      String?   @map("mechanism_action")         
+  
+  // Status regulatório
+  approval_status       String?   @map("approval_status")          
+  orphan_status         Boolean   @default(false) @map("orphan_status") 
+  
+  // Propriedades químicas
+  molecular_formula     String?   @map("molecular_formula")
+  molecular_weight      Float?    @map("molecular_weight")
+  
+  // Farmacocinética
+  absorption            String?                                    
+  metabolism            String?                                    
+  excretion             String?                                    
+  half_life             String?   @map("half_life")                
+  
+  // Categorias terapêuticas
+  atc_codes             String?   @map("atc_codes")                
+  therapeutic_class     String?   @map("therapeutic_class")
+  pharmacological_class String?   @map("pharmacological_class")
+  
+  // Descrições
+  description           String?                                    
+  toxicity              String?                                    
+  pharmacodynamics      String?                                    
+  
+  // Metadados
+  createdAt            DateTime  @default(now()) @map("created_at")
+  updatedAt            DateTime  @updatedAt @map("updated_at")
+  
+  // Relacionamentos
+  interactions         DrugInteraction[] @relation("DrugInteractions")
+  diseaseAssociations  DrugDiseaseAssociation[]
+  
+  @@map("drugbank_drugs")
+}
+
+// =====================================================================================
+// 4. INTERAÇÕES MEDICAMENTOSAS (NOVO!)
+// =====================================================================================
+
+model DrugInteraction {
+  id                   String    @id @default(uuid())
+  
+  // Medicamentos envolvidos
+  drug1_id             String    @map("drug1_id")
+  drug2_id             String    @map("drug2_id")
+  drug1                DrugBankDrug @relation("DrugInteractions", fields: [drug1_id], references: [id])
+  
+  // Detalhes da interação
+  interaction_type     String?   @map("interaction_type")          
+  severity             String?                                     
+  description          String?                                     
+  mechanism            String?                                     
+  clinical_effect      String?   @map("clinical_effect")           
+  management           String?                                     
+  
+  // Evidências
+  evidence_level       String?   @map("evidence_level")            
+  references           String?                                     
+  
+  // Metadados
+  createdAt           DateTime  @default(now()) @map("created_at")
+  updatedAt           DateTime  @updatedAt @map("updated_at")
+  
+  @@unique([drug1_id, drug2_id])
+  @@map("drug_interactions")
+}
+
+// =====================================================================================
+// 5. ASSOCIAÇÕES MEDICAMENTO-DOENÇA (NOVO!)
+// =====================================================================================
+
+model DrugDiseaseAssociation {
+  id                   String    @id @default(uuid())
+  
+  // Relacionamentos
+  drug_id              String    @map("drug_id")
+  disease_id           String    @map("disease_id")
+  drug                 DrugBankDrug @relation(fields: [drug_id], references: [id])
+  disease              OrphaDisease @relation(fields: [disease_id], references: [id])
+  
+  // Tipo de associação
+  association_type     String    @map("association_type")          
+  indication_type      String?   @map("indication_type")           
+  
+  // Detalhes clínicos
+  efficacy            String?                                      
+  dosage              String?                                      
+  administration      String?                                      
+  
+  // Evidências
+  evidence_level      String?   @map("evidence_level")             
+  clinical_trials     String?   @map("clinical_trials")           
+  
+  // Status regulatório
+  approval_status     String?   @map("approval_status")           
+  orphan_indication   Boolean   @default(false) @map("orphan_indication") 
+  
+  // Metadados
+  createdAt          DateTime  @default(now()) @map("created_at")
+  updatedAt          DateTime  @updatedAt @map("updated_at")
+  
+  @@unique([drug_id, disease_id])
+  @@map("drug_disease_associations")
+}

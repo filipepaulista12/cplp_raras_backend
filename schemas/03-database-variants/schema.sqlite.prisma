@@ -1,0 +1,326 @@
+// =====================================================================================
+// SCHEMA PRISMA SIMPLIFICADO PARA SQLite - GARD-BR
+// =====================================================================================
+// Versão temporária para desenvolvimento com SQLite
+// Para usar com PostgreSQL, restaure o backup original
+// =====================================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// =====================================================================================
+// 1. TABELAS DE REFERÊNCIA
+// =====================================================================================
+
+model DiseaseCategory {
+  id          Int      @id @default(autoincrement())
+  code        String   @unique
+  namePt      String   @map("name_pt")
+  nameEn      String   @map("name_en")
+  description String?
+  colorHex    String?  @map("color_hex")
+  icon        String?
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  diseases Disease[]
+
+  @@map("disease_categories")
+}
+
+model CPLPCountry {
+  id                  Int      @id @default(autoincrement())
+  code                String   @unique
+  name                String
+  flagEmoji           String?  @map("flag_emoji")
+  population          BigInt?
+  healthcareSystem    String?  @map("healthcare_system")
+  rareDiseasePolicy   String?  @map("rare_disease_policy")
+  createdAt           DateTime @default(now()) @map("created_at")
+
+  // Relacionamentos
+  supportOrganizations DiseaseSupportOrganization[]
+  specialists          DiseaseSpecialist[]
+  epidemiology         DiseaseEpidemiologyCPLP[]
+
+  @@map("cplp_countries")
+}
+
+model InheritancePattern {
+  id          Int      @id @default(autoincrement())
+  code        String   @unique
+  namePt      String   @map("name_pt")
+  nameEn      String   @map("name_en")
+  description String?
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  // Relacionamentos
+  diseases Disease[]
+
+  @@map("inheritance_patterns")
+}
+
+// =====================================================================================
+// 2. TABELA PRINCIPAL - DOENÇAS
+// =====================================================================================
+
+model Disease {
+  id                      String            @id @default(uuid())
+  gardBrId                String            @unique @map("gard_br_id")
+  gardOriginalId          String?           @map("gard_original_id")
+
+  // Identificação
+  namePt                  String            @map("name_pt")
+  nameEn                  String?           @map("name_en")
+  synonyms                String?           // JSON string para array
+
+  // Classificação
+  categoryId              Int?              @map("category_id")
+  category                DiseaseCategory?  @relation(fields: [categoryId], references: [id])
+  subcategory             String?
+
+  // Códigos de referência
+  orphaCode               String?           @map("orpha_code")
+  icd10Codes              String?           @map("icd10_codes") // JSON string
+  icd11Codes              String?           @map("icd11_codes") // JSON string
+  omimCodes               String?           @map("omim_codes")  // JSON string
+
+  // Informações epidemiológicas
+  prevalenceValue         String?           @map("prevalence_value")
+  prevalenceType          String?           @default("point") @map("prevalence_type")
+  ageOfOnset              String?           @map("age_of_onset")
+
+  // Genética
+  inheritancePatternId    Int?              @map("inheritance_pattern_id")
+  inheritancePattern      InheritancePattern? @relation(fields: [inheritancePatternId], references: [id])
+  genesInvolved           String?           @map("genes_involved") // JSON string
+  chromosomalLocation     String?           @map("chromosomal_location")
+
+  // Metadados
+  infoStatus              String?           @default("draft") @map("info_status")
+  qualityScore            Int?              @default(0) @map("quality_score")
+  lastMedicalReview       String?           @map("last_medical_review")
+  nextReviewDue           String?           @map("next_review_due")
+
+  // Auditoria
+  createdAt               DateTime          @default(now()) @map("created_at")
+  updatedAt               DateTime          @updatedAt @map("updated_at")
+  createdBy               String?           @map("created_by")
+  updatedBy               String?           @map("updated_by")
+
+  // Relacionamentos
+  content                 DiseaseContent?
+  clinicalTrials          DiseaseClinicalTrial[]
+  supportOrganizations    DiseaseSupportOrganization[]
+  publications            DiseasePublication[]
+  specialists             DiseaseSpecialist[]
+  epidemiology            DiseaseEpidemiologyCPLP[]
+  references              DiseaseReference[]
+  auditLogs               DiseaseAuditLog[]
+
+  @@map("diseases")
+}
+
+// =====================================================================================
+// 3. CONTEÚDO DETALHADO
+// =====================================================================================
+
+model DiseaseContent {
+  id                      String   @id @default(uuid())
+  diseaseId               String   @unique @map("disease_id")
+  disease                 Disease  @relation(fields: [diseaseId], references: [id], onDelete: Cascade)
+
+  // Conteúdo principal
+  summary                 String?
+  detailedDescription     String?  @map("detailed_description")
+
+  // Seções estruturadas (arrays como JSON strings)
+  symptoms                String?  // JSON array
+  signs                   String?  // JSON array
+  causes                  String?
+  pathophysiology         String?
+
+  // Diagnóstico
+  diagnosticCriteria      String?  @map("diagnostic_criteria") // JSON array
+  diagnosticTests         String?  @map("diagnostic_tests")     // JSON array
+  differentialDiagnosis   String?  @map("differential_diagnosis") // JSON array
+
+  // Tratamento
+  treatmentOptions        String?  @map("treatment_options")    // JSON array
+  managementGuidelines    String?  @map("management_guidelines")
+  medications             String?  // JSON array
+  therapies               String?  // JSON array
+
+  // Prognóstico
+  prognosis               String?
+  lifeExpectancy          String?  @map("life_expectancy")
+  qualityOfLifeImpact     String?  @map("quality_of_life_impact")
+
+  // Recursos
+  patientResources        String?  @map("patient_resources")     // JSON array
+  familyResources         String?  @map("family_resources")      // JSON array
+  professionalResources   String?  @map("professional_resources") // JSON array
+
+  // Metadados
+  contentVersion          Int?     @default(1) @map("content_version")
+  languageCode            String?  @default("pt-BR") @map("language_code")
+  medicalReviewer         String?  @map("medical_reviewer")
+  reviewedAt              DateTime? @map("reviewed_at")
+
+  createdAt               DateTime @default(now()) @map("created_at")
+  updatedAt               DateTime @updatedAt @map("updated_at")
+
+  @@map("disease_content")
+}
+
+// =====================================================================================
+// 4. RELACIONAMENTOS SIMPLIFICADOS
+// =====================================================================================
+
+model DiseaseClinicalTrial {
+  id                    String    @id @default(uuid())
+  diseaseId             String    @map("disease_id")
+  disease               Disease   @relation(fields: [diseaseId], references: [id], onDelete: Cascade)
+
+  trialId               String    @map("trial_id")
+  title                 String
+  description           String?
+  status                String
+  phase                 String?
+  location              String?
+  countryCode           String?   @map("country_code")
+  contactInfo           String?   @map("contact_info")
+
+  startDate             String?   @map("start_date")    // DATE as string
+  estimatedCompletion   String?   @map("estimated_completion") // DATE as string
+  lastUpdated           DateTime  @default(now()) @map("last_updated")
+
+  source                String?
+
+  @@map("disease_clinical_trials")
+}
+
+model DiseaseSupportOrganization {
+  id              String      @id @default(uuid())
+  diseaseId       String      @map("disease_id")
+  disease         Disease     @relation(fields: [diseaseId], references: [id], onDelete: Cascade)
+  countryId       Int         @map("country_id")
+  country         CPLPCountry @relation(fields: [countryId], references: [id])
+
+  organizationName String     @map("organization_name")
+  organizationType String?    @map("organization_type")
+  description      String?
+  website          String?
+  email            String?
+  phone            String?
+  address          String?
+
+  isActive         Boolean?   @default(true) @map("is_active")
+  lastUpdated      DateTime   @default(now()) @map("last_updated")
+
+  @@map("disease_support_organizations")
+}
+
+model DiseasePublication {
+  id          String   @id @default(uuid())
+  diseaseId   String   @map("disease_id")
+  disease     Disease  @relation(fields: [diseaseId], references: [id], onDelete: Cascade)
+
+  title       String
+  authors     String?  // JSON array as string
+  journal     String?
+  year        Int?
+  volume      String?
+  pages       String?
+  doi         String?
+  pmid        String?
+  abstract    String?
+  url         String?
+
+  publicationType String? @map("publication_type")
+  relevanceScore  Int?    @default(0) @map("relevance_score")
+  
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("disease_publications")
+}
+
+model DiseaseSpecialist {
+  id              String      @id @default(uuid())
+  diseaseId       String      @map("disease_id")
+  disease         Disease     @relation(fields: [diseaseId], references: [id], onDelete: Cascade)
+  countryId       Int         @map("country_id")
+  country         CPLPCountry @relation(fields: [countryId], references: [id])
+
+  name            String
+  specialties     String?     // JSON array
+  institution     String?
+  email           String?
+  phone           String?
+  city            String?
+  
+  isActive        Boolean?    @default(true) @map("is_active")
+  lastUpdated     DateTime    @default(now()) @map("last_updated")
+
+  @@map("disease_specialists")
+}
+
+model DiseaseEpidemiologyCPLP {
+  id                    String      @id @default(uuid())
+  diseaseId             String      @map("disease_id")
+  disease               Disease     @relation(fields: [diseaseId], references: [id], onDelete: Cascade)
+  countryId             Int         @map("country_id")
+  country               CPLPCountry @relation(fields: [countryId], references: [id])
+
+  estimatedCases        Int?        @map("estimated_cases")
+  prevalencePer100k     Float?      @map("prevalence_per_100k")
+  incidencePer100kYear  Float?      @map("incidence_per_100k_year")
+
+  dataSource            String?     @map("data_source")
+  dataQuality           String?     @map("data_quality")
+  collectionDate        String?     @map("collection_date") // DATE as string
+
+  notes                 String?
+
+  createdAt             DateTime    @default(now()) @map("created_at")
+  updatedAt             DateTime    @updatedAt @map("updated_at")
+
+  @@map("disease_epidemiology_cplp")
+}
+
+model DiseaseReference {
+  id          String   @id @default(uuid())
+  diseaseId   String   @map("disease_id")
+  disease     Disease  @relation(fields: [diseaseId], references: [id], onDelete: Cascade)
+
+  referenceType String @map("reference_type")
+  title         String
+  url           String?
+  description   String?
+  language      String? @default("pt")
+  
+  createdAt     DateTime @default(now()) @map("created_at")
+
+  @@map("disease_references")
+}
+
+model DiseaseAuditLog {
+  id          String   @id @default(uuid())
+  diseaseId   String   @map("disease_id")
+  disease     Disease  @relation(fields: [diseaseId], references: [id], onDelete: Cascade)
+
+  action      String
+  changes     String?  // JSON string
+  userId      String?  @map("user_id")
+  timestamp   DateTime @default(now())
+
+  @@map("disease_audit_logs")
+}

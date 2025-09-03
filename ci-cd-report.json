@@ -1,0 +1,168 @@
+{
+  "timestamp": "2025-09-03T09:03:25.368Z",
+  "summary": {
+    "total_checks": 16,
+    "passed": 4,
+    "failed": 11,
+    "warnings": 0
+  },
+  "system_health": [
+    {
+      "component": "SERVER",
+      "status": "FAIL",
+      "message": "Servidor não responde: FetchError: request to http://localhost:3001/api/status failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.300Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: src/app.module.ts",
+      "timestamp": "2025-09-03T09:03:20.301Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: src/main.ts",
+      "timestamp": "2025-09-03T09:03:20.302Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: prisma/schema.prisma",
+      "timestamp": "2025-09-03T09:03:20.302Z"
+    },
+    {
+      "component": "FILES",
+      "status": "OK",
+      "message": "Arquivo crítico presente: database/gard_dev.db",
+      "timestamp": "2025-09-03T09:03:20.302Z"
+    },
+    {
+      "component": "DATABASE",
+      "status": "FAIL",
+      "message": "Erro no banco: FetchError: request to http://localhost:3001/api/db-test failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.305Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "FAIL",
+      "message": "/api/orphanet falhou: FetchError: request to http://localhost:3001/api/orphanet failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.308Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "FAIL",
+      "message": "/api/orphanet/stats falhou: FetchError: request to http://localhost:3001/api/orphanet/stats failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.313Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "FAIL",
+      "message": "/api/hpo falhou: FetchError: request to http://localhost:3001/api/hpo failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.315Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "FAIL",
+      "message": "/api/hpo/stats falhou: FetchError: request to http://localhost:3001/api/hpo/stats failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.317Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "FAIL",
+      "message": "/api/drugbank falhou: FetchError: request to http://localhost:3001/api/drugbank failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.318Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "FAIL",
+      "message": "/api/drugbank/stats falhou: FetchError: request to http://localhost:3001/api/drugbank/stats failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.320Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "FAIL",
+      "message": "/api/cplp falhou: FetchError: request to http://localhost:3001/api/cplp failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.322Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "FAIL",
+      "message": "/api/cplp/countries falhou: FetchError: request to http://localhost:3001/api/cplp/countries failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.323Z"
+    },
+    {
+      "component": "ENDPOINTS",
+      "status": "FAIL",
+      "message": "/api/diseases falhou: FetchError: request to http://localhost:3001/api/diseases failed, reason: ",
+      "timestamp": "2025-09-03T09:03:20.325Z"
+    },
+    {
+      "component": "UNIT_TESTS",
+      "status": "SKIP",
+      "message": "Testes unitários não configurados",
+      "timestamp": "2025-09-03T09:03:25.367Z"
+    }
+  ],
+  "endpoint_tests": [
+    {
+      "name": "Endpoint /api/orphanet",
+      "status": "FAIL",
+      "duration": 3,
+      "error": "FetchError: request to http://localhost:3001/api/orphanet failed, reason: "
+    },
+    {
+      "name": "Endpoint /api/orphanet/stats",
+      "status": "FAIL",
+      "duration": 5,
+      "error": "FetchError: request to http://localhost:3001/api/orphanet/stats failed, reason: "
+    },
+    {
+      "name": "Endpoint /api/hpo",
+      "status": "FAIL",
+      "duration": 2,
+      "error": "FetchError: request to http://localhost:3001/api/hpo failed, reason: "
+    },
+    {
+      "name": "Endpoint /api/hpo/stats",
+      "status": "FAIL",
+      "duration": 2,
+      "error": "FetchError: request to http://localhost:3001/api/hpo/stats failed, reason: "
+    },
+    {
+      "name": "Endpoint /api/drugbank",
+      "status": "FAIL",
+      "duration": 1,
+      "error": "FetchError: request to http://localhost:3001/api/drugbank failed, reason: "
+    },
+    {
+      "name": "Endpoint /api/drugbank/stats",
+      "status": "FAIL",
+      "duration": 2,
+      "error": "FetchError: request to http://localhost:3001/api/drugbank/stats failed, reason: "
+    },
+    {
+      "name": "Endpoint /api/cplp",
+      "status": "FAIL",
+      "duration": 2,
+      "error": "FetchError: request to http://localhost:3001/api/cplp failed, reason: "
+    },
+    {
+      "name": "Endpoint /api/cplp/countries",
+      "status": "FAIL",
+      "duration": 1,
+      "error": "FetchError: request to http://localhost:3001/api/cplp/countries failed, reason: "
+    },
+    {
+      "name": "Endpoint /api/diseases",
+      "status": "FAIL",
+      "duration": 2,
+      "error": "FetchError: request to http://localhost:3001/api/diseases failed, reason: "
+    }
+  ],
+  "recommendations": [
+    "Verificar se o servidor está rodando na porta 3001",
+    "Verificar conexão com banco de dados SQLite",
+    "Alguns endpoints falharam - verificar logs do servidor"
+  ]
+}

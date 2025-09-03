@@ -1,0 +1,176 @@
+// Schema Prisma para MySQL/PostgreSQL Servidor
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql" // ou "postgresql"  
+  url      = env("DATABASE_URL")
+}
+
+// HPO System
+model HPOTerm {
+  id            Int      @id @default(autoincrement())
+  hpoId         String   @unique @map("hpo_id") @db.VarChar(20)
+  nameEn        String?  @map("name_en") @db.Text
+  namePt        String?  @map("name_pt") @db.Text
+  definitionEn  String?  @map("definition_en") @db.Text
+  definitionPt  String?  @map("definition_pt") @db.Text
+  synonymsEn    String?  @map("synonyms_en") @db.Text
+  synonymsPt    String?  @map("synonyms_pt") @db.Text
+  isObsolete    Boolean  @default(false) @map("is_obsolete")
+  replacedBy    String?  @map("replaced_by") @db.VarChar(20)
+  comment       String?  @db.Text
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  // Relationships
+  diseaseAssociations HPODiseaseAssociation[]
+  geneAssociations    HPOGeneAssociation[]
+
+  @@map("HPOTerm")
+  @@index([hpoId], map: "idx_hpo_id")
+  @@index([namePt], map: "idx_name_pt")
+}
+
+model HPODiseaseAssociation {
+  id          Int      @id @default(autoincrement())
+  hpoId       String   @map("hpo_id") @db.VarChar(20)
+  diseaseId   String   @map("disease_id") @db.VarChar(50)
+  databaseId  String?  @map("database_id") @db.VarChar(50)
+  diseaseName String?  @map("disease_name") @db.Text
+  qualifier   String?  @db.VarChar(100)
+  evidence    String?  @db.VarChar(50)
+  aspect      String?  @db.VarChar(10)
+  frequency   String?  @db.VarChar(100)
+  sex         String?  @db.VarChar(10)
+  modifier    String?  @db.Text
+  onset       String?  @db.VarChar(100)
+  publication String?  @db.VarChar(255)
+  assignedBy  String?  @map("assigned_by") @db.VarChar(100)
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  // Relationships
+  hpoTerm HPOTerm @relation(fields: [hpoId], references: [hpoId])
+
+  @@map("HPODiseaseAssociation")
+  @@index([hpoId, diseaseId], map: "idx_hpo_disease")
+  @@index([diseaseId], map: "idx_disease_id")
+}
+
+model HPOGeneAssociation {
+  id         Int      @id @default(autoincrement())
+  hpoId      String   @map("hpo_id") @db.VarChar(20)
+  geneId     String?  @map("gene_id") @db.VarChar(50)
+  geneSymbol String?  @map("gene_symbol") @db.VarChar(50)
+  geneName   String?  @map("gene_name") @db.Text
+  diseaseId  String?  @map("disease_id") @db.VarChar(50)
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  // Relationships
+  hpoTerm HPOTerm @relation(fields: [hpoId], references: [hpoId])
+
+  @@map("HPOGeneAssociation")
+  @@index([hpoId, geneSymbol], map: "idx_hpo_gene")
+  @@index([geneSymbol], map: "idx_gene_symbol")
+}
+
+// Orphanet System
+model OrphanetDisorder {
+  id                 Int      @id @default(autoincrement())
+  orphacode          Int      @unique
+  nameEn             String?  @map("name_en") @db.Text
+  namePt             String?  @map("name_pt") @db.Text
+  definitionEn       String?  @map("definition_en") @db.Text
+  definitionPt       String?  @map("definition_pt") @db.Text
+  synonymsEn         String?  @map("synonyms_en") @db.Text
+  synonymsPt         String?  @map("synonyms_pt") @db.Text
+  disorderType       String?  @map("disorder_type") @db.VarChar(100)
+  disorderGroup      String?  @map("disorder_group") @db.VarChar(100)
+  inheritancePattern String?  @map("inheritance_pattern") @db.Text
+  ageOfOnset         String?  @map("age_of_onset") @db.Text
+  prevalence         String?  @db.Text
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+
+  @@map("OrphanetDisorder")
+  @@index([orphacode], map: "idx_orphacode")
+  @@index([namePt], map: "idx_name_pt_orphanet")
+}
+
+// DrugBank System
+model DrugBankDrug {
+  id                    Int      @id @default(autoincrement())
+  drugbankId            String   @unique @map("drugbank_id") @db.VarChar(20)
+  nameEn                String?  @map("name_en") @db.Text
+  namePt                String?  @map("name_pt") @db.Text
+  descriptionEn         String?  @map("description_en") @db.Text
+  descriptionPt         String?  @map("description_pt") @db.Text
+  indicationEn          String?  @map("indication_en") @db.Text
+  indicationPt          String?  @map("indication_pt") @db.Text
+  mechanismOfActionEn   String?  @map("mechanism_of_action_en") @db.Text
+  mechanismOfActionPt   String?  @map("mechanism_of_action_pt") @db.Text
+  pharmacologyEn        String?  @map("pharmacology_en") @db.Text
+  pharmacologyPt        String?  @map("pharmacology_pt") @db.Text
+  drugType              String?  @map("drug_type") @db.VarChar(100)
+  state                 String?  @db.VarChar(50)
+  createdAt             DateTime @default(now()) @map("created_at")
+  updatedAt             DateTime @updatedAt @map("updated_at")
+
+  @@map("DrugBankDrug")
+  @@index([drugbankId], map: "idx_drugbank_id")
+  @@index([namePt], map: "idx_name_pt_drug")
+}
+
+// GARD System  
+model GardDisease {
+  id                 Int      @id @default(autoincrement())
+  gardId             Int      @unique @map("gard_id")
+  nameEn             String?  @map("name_en") @db.Text
+  namePt             String?  @map("name_pt") @db.Text
+  descriptionEn      String?  @map("description_en") @db.Text
+  descriptionPt      String?  @map("description_pt") @db.Text
+  synonymsEn         String?  @map("synonyms_en") @db.Text
+  synonymsPt         String?  @map("synonyms_pt") @db.Text
+  inheritancePattern String?  @map("inheritance_pattern") @db.Text
+  prevalence         String?  @db.Text
+  ageOfOnset         String?  @map("age_of_onset") @db.Text
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+
+  @@map("GardDisease")
+  @@index([gardId], map: "idx_gard_id")
+  @@index([namePt], map: "idx_name_pt_gard")
+}
+
+// Cross-System Mappings
+model DiseaseMapping {
+  id              Int      @id @default(autoincrement())
+  sourceSystem    String   @map("source_system") @db.VarChar(20)
+  sourceId        String   @map("source_id") @db.VarChar(50)
+  targetSystem    String   @map("target_system") @db.VarChar(20)
+  targetId        String   @map("target_id") @db.VarChar(50)
+  mappingType     String?  @map("mapping_type") @db.VarChar(50)
+  confidenceScore Decimal? @map("confidence_score") @db.Decimal(3, 2)
+  verified        Boolean  @default(false)
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  @@map("DiseaseMapping")
+  @@index([sourceSystem, sourceId], map: "idx_source")
+  @@index([targetSystem, targetId], map: "idx_target")
+}
+
+// CPLP Countries
+model CLPCountry {
+  id                   Int      @id @default(autoincrement())
+  countryCode          String   @unique @map("country_code") @db.VarChar(3)
+  countryNamePt        String   @map("country_name_pt") @db.VarChar(100)
+  countryNameEn        String   @map("country_name_en") @db.VarChar(100)
+  population           BigInt?
+  healthcareSystemType String?  @map("healthcare_system_type") @db.VarChar(100)
+  rareDiseaseRegistry  Boolean  @default(false) @map("rare_disease_registry")
+  active               Boolean  @default(true)
+  createdAt            DateTime @default(now()) @map("created_at")
+
+  @@map("CLPCountry")
+}

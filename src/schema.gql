@@ -1,0 +1,65 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type PaginationType {
+  page: Int!
+  limit: Int!
+  total: Int!
+  pages: Int!
+}
+
+type DatabaseTableType {
+  tableName: String!
+  schema: String
+}
+
+type GenericDataType {
+  key: String!
+  value: String!
+}
+
+type OrphanetDiseaseType {
+  id: String!
+  name: String!
+  code: String
+  description: String
+  synonyms: [String!]
+  timestamp: String!
+}
+
+type OrphanetSearchDataType {
+  tables: [DatabaseTableType!]!
+  sampleData: [GenericDataType!]
+  pagination: PaginationType!
+}
+
+type OrphanetSearchResultType {
+  success: Boolean!
+  message: String!
+  data: OrphanetSearchDataType!
+  timestamp: String!
+}
+
+type OrphanetStatsType {
+  totalTables: Int!
+  rareDiseasesTables: Int!
+  totalRecords: Int!
+  lastUpdated: String!
+  version: String!
+}
+
+type Query {
+  """Buscar doenças na base Orphanet com paginação"""
+  orphanetDiseases(page: Int! = 1, limit: Int! = 10, search: String): OrphanetSearchResultType!
+
+  """Buscar doença específica por ID"""
+  orphanetDisease(id: String!): OrphanetDiseaseType!
+
+  """Estatísticas da base de dados Orphanet"""
+  orphanetStats: OrphanetStatsType!
+  hpoTest: String!
+  drugbankTest: String!
+  cplpTest: String!
+  diseasesTest: String!
+}
