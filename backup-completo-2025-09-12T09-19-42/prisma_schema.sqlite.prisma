@@ -1,0 +1,105 @@
+// =====================================================================================
+// SCHEMA PRISMA SQLite TEMPORÁRIO - CPLP-RARAS 
+// =====================================================================================
+// Use este schema até configurar o MySQL
+// Para usar: renomeie para schema.prisma
+// =====================================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("SQLITE_DATABASE_URL")
+}
+
+// PAÍSES CPLP
+model CplpCountry {
+  id                     Int      @id @default(autoincrement())
+  code                   String   @unique
+  name                   String
+  name_pt                String   @map("name_pt")
+  flag_emoji             String?  @map("flag_emoji")
+  population             String?
+  language               String?
+  health_system          String?  @map("health_system")
+  rare_disease_policy    String?  @map("rare_disease_policy")
+  orphan_drugs_program   String?  @map("orphan_drugs_program")
+  created_at             DateTime @default(now()) @map("created_at")
+
+  @@map("cplp_countries")
+}
+
+// DOENÇAS ORPHANET
+model OrphaDisease {
+  id                    Int      @id @default(autoincrement())
+  orphacode             String   @unique
+  name                  String
+  name_pt               String?  @map("name_pt")
+  definition            String?
+  definition_pt         String?  @map("definition_pt")
+  synonyms              String?
+  synonyms_pt           String?  @map("synonyms_pt")
+  prevalence            String?
+  inheritance           String?
+  age_onset             String?  @map("age_onset")
+  icd10_codes           String?  @map("icd10_codes")
+  omim_codes            String?  @map("omim_codes")
+  umls_codes            String?  @map("umls_codes")
+  mesh_codes            String?  @map("mesh_codes")
+  gard_id               String?  @map("gard_id")
+  status                String?
+  created_at            DateTime @default(now()) @map("created_at")
+  updated_at            DateTime @updatedAt @map("updated_at")
+
+  // Relacionamentos simplificados
+  phenotypes            OrphaPhenotype[]
+  clinical_signs        OrphaClinicalSign[]
+  gene_associations     OrphaGeneAssociation[]
+
+  @@map("orpha_diseases")
+}
+
+// FENÓTIPOS
+model OrphaPhenotype {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  hpo_id        String?      @map("hpo_id")
+  phenotype     String
+  frequency     String?
+  source        String?
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_phenotypes")
+}
+
+// SINAIS CLÍNICOS
+model OrphaClinicalSign {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  clinical_sign String       @map("clinical_sign")
+  frequency     String?
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_clinical_signs")
+}
+
+// GENES
+model OrphaGeneAssociation {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  gene_symbol   String       @map("gene_symbol")
+  gene_name     String?      @map("gene_name")
+  association_type String?   @map("association_type")
+  hgnc_id       String?      @map("hgnc_id")
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_gene_associations")
+}

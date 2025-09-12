@@ -1,0 +1,422 @@
+// Schema Prisma limpo para SQLite - CPLP-Raras
+// Removidas todas as anotações de tipo específicas do MySQL
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Países da CPLP
+model CplpCountry {
+  id                     Int      @id @default(autoincrement())
+  code                   String   @unique
+  name                   String
+  name_pt                String   @map("name_pt")
+  flag_emoji             String?  @map("flag_emoji")
+  population             String?
+  language               String?
+  health_system          String?  @map("health_system")
+  rare_disease_policy    String?  @map("rare_disease_policy")
+  orphan_drugs_program   String?  @map("orphan_drugs_program")
+  is_active              Boolean  @default(true) @map("is_active")
+  created_at             DateTime @default(now()) @map("created_at")
+  updated_at             DateTime @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  country_data           CountryDiseaseData[]
+  country_statistics     CountryStatistics[]
+
+  @@map("cplp_countries")
+}
+
+// Doenças Raras (base Orphanet)
+model RareDisease {
+  id                    Int      @id @default(autoincrement())
+  orphacode             String   @unique
+  name                  String
+  name_pt               String?  @map("name_pt")
+  definition            String?
+  definition_pt         String?  @map("definition_pt")
+  synonyms              String?
+  synonyms_pt           String?  @map("synonyms_pt")
+  prevalence            String?
+  inheritance           String?
+  age_onset             String?  @map("age_onset")
+  icd10_codes           String?  @map("icd10_codes")
+  omim_codes            String?  @map("omim_codes")
+  umls_codes            String?  @map("umls_codes")
+  mesh_codes            String?  @map("mesh_codes")
+  gard_id               String?  @map("gard_id")
+  status                String?
+  is_active             Boolean  @default(true) @map("is_active")
+  created_at            DateTime @default(now()) @map("created_at")
+  updated_at            DateTime @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  phenotypes            DiseasePhenotype[]
+  clinical_signs        DiseaseClinicalSign[]
+  genes                 DiseaseGene[]
+  external_mappings     DiseaseExternalMapping[]
+  classifications       DiseaseClassification[]
+  diagnostics           DiseaseDiagnostic[]
+  epidemiology          DiseaseEpidemiology[]
+  management            DiseaseManagement[]
+  summaries             DiseaseSummary[]
+  country_data          CountryDiseaseData[]
+  drug_associations     DrugDiseaseAssociation[]
+  hpo_associations      HpoDiseasAssociation[]
+
+  @@map("rare_diseases")
+}
+
+// Fenótipos associados às doenças
+model DiseasePhenotype {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  hpo_id        String?      @map("hpo_id")
+  phenotype     String
+  frequency     String?
+  source        String?
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  disease       RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("disease_phenotypes")
+}
+
+// Sinais clínicos
+model DiseaseClinicalSign {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  clinical_sign String       @map("clinical_sign")
+  frequency     String?
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  disease       RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("disease_clinical_signs")
+}
+
+// Genes associados
+model DiseaseGene {
+  id               Int          @id @default(autoincrement())
+  disease_id       Int          @map("disease_id")
+  gene_symbol      String       @map("gene_symbol")
+  gene_name        String?      @map("gene_name")
+  association_type String?      @map("association_type")
+  hgnc_id          String?      @map("hgnc_id")
+  created_at       DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  disease          RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("disease_genes")
+}
+
+// Mapeamentos externos
+model DiseaseExternalMapping {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  source        String
+  external_id   String       @map("external_id")
+  mapping_type  String?      @map("mapping_type")
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  disease       RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("disease_external_mappings")
+}
+
+// Classificações
+model DiseaseClassification {
+  id             Int          @id @default(autoincrement())
+  disease_id     Int          @map("disease_id")
+  level          String
+  classification String
+  parent_id      String?      @map("parent_id")
+  created_at     DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  disease        RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("disease_classifications")
+}
+
+// Diagnósticos
+model DiseaseDiagnostic {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  type          String
+  value         String
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  disease       RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("disease_diagnostics")
+}
+
+// Epidemiologia
+model DiseaseEpidemiology {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  type          String
+  value         String
+  geographic    String?
+  source        String?
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  disease       RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("disease_epidemiology")
+}
+
+// Gestão/Tratamento
+model DiseaseManagement {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  type          String
+  description   String
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  disease       RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("disease_management")
+}
+
+// Resumos/Informações adicionais
+model DiseaseSummary {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  type          String
+  text_content  String       @map("text_content")
+  language      String?
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  disease       RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("disease_summaries")
+}
+
+// Estatísticas por país
+model CountryStatistics {
+  id            Int         @id @default(autoincrement())
+  country_id    Int         @map("country_id")
+  disease_id    Int?        @map("disease_id")
+  cases         Int?
+  prevalence    String?
+  incidence     String?
+  data_source   String?     @map("data_source")
+  year          Int?
+  notes         String?
+  created_at    DateTime    @default(now()) @map("created_at")
+
+  // Relacionamentos
+  country       CplpCountry @relation(fields: [country_id], references: [id])
+
+  @@map("country_statistics")
+}
+
+// Dados específicos por país
+model CountryDiseaseData {
+  id            Int         @id @default(autoincrement())
+  country_id    Int         @map("country_id")
+  disease_id    Int         @map("disease_id")
+  cases         Int?
+  prevalence    String?
+  incidence     String?
+  data_source   String?     @map("data_source")
+  year          Int?
+  notes         String?
+  created_at    DateTime    @default(now()) @map("created_at")
+
+  // Relacionamentos
+  country       CplpCountry @relation(fields: [country_id], references: [id])
+  disease       RareDisease @relation(fields: [disease_id], references: [id])
+
+  @@map("country_disease_data")
+}
+
+// === DRUGBANK MODELS ===
+
+// Medicamentos DrugBank
+model DrugbankDrug {
+  id                String     @id @default(uuid())
+  drugbank_id       String     @unique @map("drugbank_id")
+  name              String
+  name_pt           String?    @map("name_pt")
+  description       String?
+  description_pt    String?    @map("description_pt")
+  cas_number        String?    @map("cas_number")
+  unii              String?
+  average_mass      Float?     @map("average_mass")
+  monoisotopic_mass Float?     @map("monoisotopic_mass")
+  state             String?
+  groups            String?
+  indication        String?
+  pharmacodynamics  String?
+  mechanism_action  String?    @map("mechanism_action")
+  toxicity          String?
+  metabolism        String?
+  absorption        String?
+  half_life         String?    @map("half_life")
+  protein_binding   String?    @map("protein_binding")
+  route_elimination String?    @map("route_elimination")
+  volume_distribution String?  @map("volume_distribution")
+  clearance         String?
+  is_active         Boolean    @default(true) @map("is_active")
+  created_at        DateTime   @default(now()) @map("created_at")
+  updated_at        DateTime   @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  disease_associations DrugDiseaseAssociation[]
+  drug1_interactions   DrugInteraction[] @relation("Drug1Interactions")
+  drug2_interactions   DrugInteraction[] @relation("Drug2Interactions")
+
+  @@map("drugbank_drugs")
+}
+
+// Associações Medicamento-Doença
+model DrugDiseaseAssociation {
+  id               String       @id @default(uuid())
+  drug_id          String       @map("drug_id")
+  disease_id       Int          @map("disease_id")
+  association_type String       @map("association_type")
+  evidence         String?
+  source           String?
+  created_at       DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  drug             DrugbankDrug @relation(fields: [drug_id], references: [id])
+  disease          RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("drug_disease_associations")
+}
+
+// Interações Medicamentosas
+model DrugInteraction {
+  id                  String       @id @default(uuid())
+  drug1_id            String       @map("drug1_id")
+  drug2_id            String       @map("drug2_id")
+  interaction_type    String       @map("interaction_type")
+  interaction_type_pt String?      @map("interaction_type_pt")
+  severity            String
+  severity_pt         String?      @map("severity_pt")
+  description         String?
+  description_pt      String?      @map("description_pt")
+  mechanism           String?
+  mechanism_pt        String?      @map("mechanism_pt")
+  effect              String?
+  effect_pt           String?      @map("effect_pt")
+  management          String?
+  management_pt       String?      @map("management_pt")
+  evidence            String?
+  reference           String?
+  created_at          DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  drug1               DrugbankDrug @relation("Drug1Interactions", fields: [drug1_id], references: [id])
+  drug2               DrugbankDrug @relation("Drug2Interactions", fields: [drug2_id], references: [id])
+
+  @@map("drug_interactions")
+}
+
+// === HPO MODELS ===
+
+// Termos HPO
+model HpoTerm {
+  id            String       @id @default(uuid())
+  hpo_id        String       @unique @map("hpo_id")
+  name          String
+  name_pt       String?      @map("name_pt")
+  definition    String?
+  definition_pt String?      @map("definition_pt")
+  synonyms      String?
+  synonyms_pt   String?      @map("synonyms_pt")
+  is_active     Boolean      @default(true) @map("is_active")
+  created_at    DateTime     @default(now()) @map("created_at")
+  updated_at    DateTime     @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  disease_associations HpoDiseasAssociation[]
+  gene_associations    HpoGeneAssociation[]
+  phenotype_associations HpoPhenotypeAssociation[]
+
+  @@map("hpo_terms")
+}
+
+// Associações HPO-Doença
+model HpoDiseasAssociation {
+  id            String       @id @default(uuid())
+  hpo_id        String       @map("hpo_id")
+  disease_id    Int          @map("disease_id")
+  evidence      String?
+  frequency     String?
+  source        String?
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  hpo_term      HpoTerm      @relation(fields: [hpo_id], references: [id])
+  disease       RareDisease  @relation(fields: [disease_id], references: [id])
+
+  @@map("hpo_disease_associations")
+}
+
+// Associações HPO-Gene
+model HpoGeneAssociation {
+  id            String       @id @default(uuid())
+  hpo_id        String       @map("hpo_id")
+  gene_id       Int          @map("gene_id")
+  evidence      String?
+  source        String?
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  hpo_term      HpoTerm      @relation(fields: [hpo_id], references: [id])
+
+  @@map("hpo_gene_associations")
+}
+
+// Associações HPO-Fenótipo
+model HpoPhenotypeAssociation {
+  id                    String       @id @default(uuid())
+  hpo_id                String       @map("hpo_id")
+  phenotype_description String       @map("phenotype_description")
+  frequency             String?
+  evidence              String?
+  source                String?
+  created_at            DateTime     @default(now()) @map("created_at")
+
+  // Relacionamentos
+  hpo_term              HpoTerm      @relation(fields: [hpo_id], references: [id])
+
+  @@map("hpo_phenotype_associations")
+}
+
+// === LOGS E CONTROLE ===
+
+// Logs de importação Orphanet
+model OrphaImportLog {
+  id                String       @id @default(uuid())
+  import_type       String       @map("import_type")
+  start_time        DateTime     @map("start_time") @default(now())
+  end_time          DateTime?    @map("end_time")
+  status            String       // success, error, running
+  records_created   Int?         @map("records_created") @default(0)
+  records_updated   Int?         @map("records_updated") @default(0)
+  error_message     String?      @map("error_message")
+  file_version      String?      @map("file_version")
+  notes             String?
+  created_at        DateTime     @default(now()) @map("created_at")
+
+  @@map("orpha_import_logs")
+}

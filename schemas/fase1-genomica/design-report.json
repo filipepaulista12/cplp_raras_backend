@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-09-11T10:44:02.202Z",
+  "fase": "1.2 - Design Schema Expandido",
+  "status": "CONCLUÍDO",
+  "tabelas_mysql": [
+    "clinvar_variants",
+    "clinvar_submissions",
+    "clinvar_hpo_associations",
+    "clinvar_genes",
+    "omim_entries",
+    "omim_phenotypes",
+    "omim_hpo_associations",
+    "omim_external_mappings"
+  ],
+  "models_prisma": [
+    "ClinvarVariant",
+    "ClinvarSubmission",
+    "ClinvarHpoAssociation",
+    "ClinvarGene",
+    "OmimEntry",
+    "OmimPhenotype",
+    "OmimHpoAssociation",
+    "OmimExternalMapping"
+  ],
+  "relacionamentos": {
+    "ClinVar → HPO": "clinvar_hpo_associations conecta variantes a fenótipos",
+    "ClinVar → Genes": "clinvar_variants.gene_id → clinvar_genes.gene_id",
+    "ClinVar → Orphanet": "Via OMIM numbers em submissions → omim_external_mappings",
+    "OMIM → HPO": "omim_hpo_associations (expansão das existentes)",
+    "OMIM → Orphanet": "omim_external_mappings.external_db = \"Orphanet\"",
+    "OMIM → ClinVar": "Via gene symbols compartilhados"
+  },
+  "estimativas": {
+    "clinvar": {
+      "variantes": "3.766.821 (inicial)",
+      "submissoes": "~10M (média 3 por variante)",
+      "genes": "~25K únicos",
+      "hpo_associations": "~1M (estimativa conservadora)"
+    },
+    "omim": {
+      "entries": "~25K",
+      "phenotypes": "~50K",
+      "hpo_associations": "~100K (expansão significativa)",
+      "external_mappings": "~150K"
+    },
+    "impacto_total": {
+      "registros_adicionais": "~15M registros",
+      "crescimento": "Base atual 106K → 15M+ (140x expansão)",
+      "storage_estimate": "~5-10GB adicionais",
+      "sync_complexity": "Mantida - MySQL ≡ SQLite"
+    }
+  },
+  "arquivos_gerados": [
+    "C:\\Users\\up739088\\Desktop\\aplicaçoes,sites,etc\\cplp_raras_backend\\schemas\\fase1-genomica\\mysql-genomica-extension.sql",
+    "C:\\Users\\up739088\\Desktop\\aplicaçoes,sites,etc\\cplp_raras_backend\\schemas\\fase1-genomica\\prisma-genomica-models.prisma"
+  ],
+  "validacao": "Schema projetado mantém princípio MySQL ≡ SQLite",
+  "proxima_tarefa": "1.3 - Implementação e teste do schema expandido"
+}

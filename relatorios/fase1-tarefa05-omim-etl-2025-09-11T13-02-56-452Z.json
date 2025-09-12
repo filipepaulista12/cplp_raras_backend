@@ -1,0 +1,65 @@
+{
+  "inicio": "2025-09-11T13:02:56.457Z",
+  "etapas": {
+    "extracao": {
+      "status": "sucesso",
+      "registros_extraidos": 50,
+      "arquivo_dados": "data\\omim\\omim-extract-2025-09-11T13-02-56-452Z.json",
+      "fonte": "OMIM API (simulado)"
+    },
+    "transformacao": {
+      "status": "sucesso",
+      "entries_transformadas": 50,
+      "phenotypes_transformados": 97,
+      "mappings_transformados": 200,
+      "associacoes_hpo": 0,
+      "arquivo_dados": "data\\omim\\omim-transformed-2025-09-11T13-02-56-452Z.json"
+    },
+    "carga": {
+      "status": "sucesso",
+      "entries_carregadas": 50,
+      "phenotypes_carregados": 97,
+      "mappings_carregados": 200,
+      "associacoes_carregadas": 0,
+      "total_registros": 347
+    },
+    "validacao": {
+      "status": "sucesso",
+      "mysql_counts": {
+        "entries": 50,
+        "phenotypes": 97,
+        "external_mappings": 200,
+        "hpo_associations": 0
+      },
+      "sqlite_counts": {
+        "entries": 50,
+        "phenotypes": 97,
+        "external_mappings": 200,
+        "hpo_associations": 0
+      },
+      "sincronizado": true,
+      "integridade_preservada": true
+    }
+  },
+  "metricas": {
+    "tempo_execucao_ms": 4359,
+    "tempo_execucao_legivel": "4s",
+    "eficiencia_extracao": "50 registros extraídos",
+    "eficiencia_transformacao": "50 registros transformados",
+    "eficiencia_carga": "347 registros carregados",
+    "mapeamentos_hpo": 0,
+    "taxa_sucesso": "694%"
+  },
+  "dados_extraidos": 50,
+  "dados_transformados": 50,
+  "dados_carregados": 347,
+  "mapeamentos_hpo": 0,
+  "mapeamentos_clinvar": 0,
+  "erros": [],
+  "sucessos": [
+    "Conexões de banco estabelecidas"
+  ],
+  "status": "sucesso_completo",
+  "fim": "2025-09-11T13:03:00.816Z",
+  "duracao_total": 4359
+}

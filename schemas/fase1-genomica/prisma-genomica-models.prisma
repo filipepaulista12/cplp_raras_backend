@@ -1,0 +1,191 @@
+
+// ============================================================================
+// 🧬 MODELOS CLINVAR
+// ============================================================================
+
+// Variantes ClinVar
+model ClinvarVariant {
+  id                     Int      @id @default(autoincrement())
+  clinvar_id             String   @unique @map("clinvar_id")
+  name                   String?
+  type                   String?
+  chromosome             String?
+  start_position         BigInt?  @map("start_position")
+  end_position           BigInt?  @map("end_position")
+  reference_allele       String?  @map("reference_allele")
+  alternate_allele       String?  @map("alternate_allele")
+  gene_symbol            String?  @map("gene_symbol")
+  gene_id                Int?     @map("gene_id")
+  hgvs_c                 String?  @map("hgvs_c")
+  hgvs_p                 String?  @map("hgvs_p")
+  hgvs_g                 String?  @map("hgvs_g")
+  assembly               String?  @default("GRCh38")
+  clinical_significance  String?  @map("clinical_significance")
+  review_status          String?  @map("review_status")
+  last_evaluated         DateTime? @map("last_evaluated")
+  submission_count       Int?     @default(0) @map("submission_count")
+  origin                 String?
+  affected_status        String?  @map("affected_status")
+  is_active              Boolean  @default(true) @map("is_active")
+  created_at             DateTime @default(now()) @map("created_at")
+  updated_at             DateTime @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  submissions            ClinvarSubmission[]
+  hpo_associations       ClinvarHpoAssociation[]
+  gene                   ClinvarGene? @relation(fields: [gene_id], references: [gene_id])
+
+  @@map("clinvar_variants")
+}
+
+// Submissões ClinVar
+model ClinvarSubmission {
+  id                     Int      @id @default(autoincrement())
+  variant_id             Int      @map("variant_id")
+  submitter_name         String?  @map("submitter_name")
+  submission_date        DateTime? @map("submission_date")
+  clinical_significance  String?  @map("clinical_significance")
+  condition_name         String?  @map("condition_name")
+  condition_id           String?  @map("condition_id")
+  method_type            String?  @map("method_type")
+  description            String?
+  citation_source        String?  @map("citation_source")
+  created_at             DateTime @default(now()) @map("created_at")
+  updated_at             DateTime @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  variant                ClinvarVariant @relation(fields: [variant_id], references: [id], onDelete: Cascade)
+
+  @@map("clinvar_submissions")
+}
+
+// Associações ClinVar-HPO
+model ClinvarHpoAssociation {
+  id                     Int      @id @default(autoincrement())
+  variant_id             Int      @map("variant_id")
+  hpo_id                 String   @map("hpo_id")
+  evidence_code          String?  @map("evidence_code")
+  source                 String?
+  confidence_score       Decimal? @map("confidence_score")
+  created_at             DateTime @default(now()) @map("created_at")
+
+  // Relacionamentos
+  variant                ClinvarVariant @relation(fields: [variant_id], references: [id], onDelete: Cascade)
+  hpo_term               HpoTerm @relation(fields: [hpo_id], references: [hpo_id], onDelete: Cascade)
+
+  @@unique([variant_id, hpo_id])
+  @@map("clinvar_hpo_associations")
+}
+
+// Genes ClinVar
+model ClinvarGene {
+  id                     Int      @id @default(autoincrement())
+  gene_id                Int      @unique @map("gene_id")
+  symbol                 String
+  name                   String?
+  aliases                String?
+  chromosome             String?
+  map_location           String?  @map("map_location")
+  gene_type              String?  @map("gene_type")
+  description            String?
+  summary                String?
+  is_active              Boolean  @default(true) @map("is_active")
+  created_at             DateTime @default(now()) @map("created_at")
+  updated_at             DateTime @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  variants               ClinvarVariant[]
+
+  @@map("clinvar_genes")
+}
+
+// ============================================================================
+// 🔬 MODELOS OMIM
+// ============================================================================
+
+// Entradas OMIM
+model OmimEntry {
+  id                     Int      @id @default(autoincrement())
+  mim_number             Int      @unique @map("mim_number")
+  title                  String
+  title_pt               String?  @map("title_pt")
+  entry_type             String?  @map("entry_type")
+  status                 String?  @default("live")
+  created_date           DateTime? @map("created_date")
+  edited_date            DateTime? @map("edited_date")
+  gene_symbol            String?  @map("gene_symbol")
+  gene_symbols_alt       String?  @map("gene_symbols_alt")
+  chromosome             String?
+  description            String?
+  description_pt         String?  @map("description_pt")
+  clinical_synopsis      String?  @map("clinical_synopsis") // JSON como String
+  inheritance_pattern    String?  @map("inheritance_pattern")
+  mapping_info           String?  @map("mapping_info")
+  is_active              Boolean  @default(true) @map("is_active")
+  created_at             DateTime @default(now()) @map("created_at")
+  updated_at             DateTime @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  phenotypes             OmimPhenotype[]
+  hpo_associations       OmimHpoAssociation[]
+  external_mappings      OmimExternalMapping[]
+
+  @@map("omim_entries")
+}
+
+// Fenótipos OMIM
+model OmimPhenotype {
+  id                     Int      @id @default(autoincrement())
+  omim_entry_id          Int      @map("omim_entry_id")
+  phenotype_mim          Int?     @map("phenotype_mim")
+  phenotype_name         String   @map("phenotype_name")
+  phenotype_name_pt      String?  @map("phenotype_name_pt")
+  phenotype_mapping_key  Int?     @map("phenotype_mapping_key")
+  phenotype_description  String?  @map("phenotype_description")
+  inheritance            String?
+  comments               String?
+  created_at             DateTime @default(now()) @map("created_at")
+
+  // Relacionamentos
+  omim_entry             OmimEntry @relation(fields: [omim_entry_id], references: [id], onDelete: Cascade)
+
+  @@map("omim_phenotypes")
+}
+
+// Associações OMIM-HPO
+model OmimHpoAssociation {
+  id                     Int      @id @default(autoincrement())
+  omim_entry_id          Int      @map("omim_entry_id")
+  hpo_id                 String   @map("hpo_id")
+  evidence_code          String?  @map("evidence_code")
+  frequency              String?
+  onset                  String?
+  source                 String?  @default("OMIM")
+  confidence_score       Decimal? @map("confidence_score")
+  created_at             DateTime @default(now()) @map("created_at")
+
+  // Relacionamentos
+  omim_entry             OmimEntry @relation(fields: [omim_entry_id], references: [id], onDelete: Cascade)
+  hpo_term               HpoTerm @relation(fields: [hpo_id], references: [hpo_id], onDelete: Cascade)
+
+  @@unique([omim_entry_id, hpo_id])
+  @@map("omim_hpo_associations")
+}
+
+// Mapeamentos externos OMIM
+model OmimExternalMapping {
+  id                     Int      @id @default(autoincrement())
+  omim_entry_id          Int      @map("omim_entry_id")
+  external_db            String   @map("external_db")
+  external_id            String   @map("external_id")
+  mapping_type           String?  @default("exact") @map("mapping_type")
+  confidence_score       Decimal? @map("confidence_score")
+  source                 String?
+  created_at             DateTime @default(now()) @map("created_at")
+
+  // Relacionamentos
+  omim_entry             OmimEntry @relation(fields: [omim_entry_id], references: [id], onDelete: Cascade)
+
+  @@unique([omim_entry_id, external_db, external_id])
+  @@map("omim_external_mappings")
+}

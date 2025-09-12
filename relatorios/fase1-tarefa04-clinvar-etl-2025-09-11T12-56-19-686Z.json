@@ -1,0 +1,63 @@
+{
+  "inicio": "2025-09-11T12:56:19.691Z",
+  "etapas": {
+    "extracao": {
+      "status": "sucesso",
+      "registros_extraidos": 100,
+      "arquivo_dados": "data\\clinvar\\clinvar-extract-2025-09-11T12-56-19-686Z.json",
+      "fonte": "ClinVar API (simulado)"
+    },
+    "transformacao": {
+      "status": "sucesso",
+      "variants_transformados": 100,
+      "genes_transformados": 10,
+      "submissions_transformadas": 588,
+      "associacoes_hpo": 0,
+      "arquivo_dados": "data\\clinvar\\clinvar-transformed-2025-09-11T12-56-19-686Z.json"
+    },
+    "carga": {
+      "status": "sucesso",
+      "genes_carregados": 10,
+      "variantes_carregados": 100,
+      "submissoes_carregadas": 588,
+      "associacoes_carregadas": 0,
+      "total_registros": 698
+    },
+    "validacao": {
+      "status": "sucesso",
+      "mysql_counts": {
+        "variants": 100,
+        "genes": 10,
+        "submissions": 588,
+        "hpo_associations": 0
+      },
+      "sqlite_counts": {
+        "variants": 100,
+        "genes": 10,
+        "submissions": 588,
+        "hpo_associations": 0
+      },
+      "sincronizado": true
+    }
+  },
+  "metricas": {
+    "tempo_execucao_ms": 7417,
+    "tempo_execucao_legivel": "7s",
+    "eficiencia_extracao": "100 registros extraídos",
+    "eficiencia_transformacao": "100 registros transformados",
+    "eficiencia_carga": "698 registros carregados",
+    "mapeamentos_hpo": 0,
+    "taxa_sucesso": "698%"
+  },
+  "dados_extraidos": 100,
+  "dados_transformados": 100,
+  "dados_carregados": 698,
+  "mapeamentos_hpo": 0,
+  "erros": [],
+  "sucessos": [
+    "Conexões de banco estabelecidas"
+  ],
+  "status": "sucesso_completo",
+  "fim": "2025-09-11T12:56:27.108Z",
+  "duracao_total": 7417
+}

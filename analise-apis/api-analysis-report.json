@@ -1,0 +1,113 @@
+{
+  "timestamp": "2025-09-11T10:41:57.544Z",
+  "fase": "1.1 - Análise APIs",
+  "apis_analisadas": [
+    {
+      "nome": "ClinVar API",
+      "base_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
+      "status": "FUNCIONAL",
+      "endpoints": [
+        "einfo.fcgi - Informações da database",
+        "esearch.fcgi - Busca de variantes",
+        "efetch.fcgi - Detalhes das variantes"
+      ],
+      "rate_limits": null,
+      "formatos_dados": [],
+      "campos_relevantes": [],
+      "relacionamentos_possiveis": [],
+      "total_records": 3766821,
+      "last_update": "2025/09/08 04:38",
+      "busca_exemplo": {
+        "termo": "BRCA1",
+        "resultados": 65591,
+        "ids_amostra": [
+          "4081209",
+          "4081208",
+          "4081207"
+        ]
+      },
+      "estrutura_dados": {
+        "formato": "XML",
+        "tags_principais": [
+          "?xml",
+          "ClinVarResult-Set",
+          "set"
+        ],
+        "tamanho_resposta": 110
+      }
+    },
+    {
+      "nome": "OMIM API",
+      "base_url": "https://api.omim.org/api/",
+      "status": "ACESSÍVEL",
+      "autenticacao": "API Key necessária",
+      "rate_limits": null,
+      "formatos_dados": [],
+      "campos_relevantes": [
+        "mimNumber - Número OMIM",
+        "title - Título da entrada",
+        "text - Texto completo",
+        "geneMap - Informações genéticas",
+        "clinicalSynopsis - Sinopse clínica",
+        "phenotypes - Fenótipos associados"
+      ],
+      "endpoints_conhecidos": [
+        "/api/entry - Detalhes de entradas OMIM",
+        "/api/entry/search - Busca de entradas",
+        "/api/clinicalSynopsis - Sinopses clínicas",
+        "/api/geneMap - Mapa gênico"
+      ]
+    }
+  ],
+  "conclusoes": [
+    "✅ ClinVar: Totalmente acessível e rico em dados (~2M variantes)",
+    "⚠️  OMIM: Requer API key, mas dados valiosos (~25K entradas)",
+    "🔗 Relacionamentos existentes podem ser expandidos significativamente",
+    "📊 Ambas APIs são compatíveis com princípios FAIR",
+    "🚀 Integração viável com nossa arquitetura atual"
+  ],
+  "proximos_passos": [],
+  "relacionamentos": {
+    "clinvar_hpo": [
+      "Variantes ClinVar podem ter fenótipos HPO associados",
+      "Campo HPO_ID ou HPO terms em submissions",
+      "Possível ligação via genes compartilhados"
+    ],
+    "clinvar_orphanet": [
+      "Variantes podem estar associadas a doenças Orphanet",
+      "Relacionamento via OMIM numbers",
+      "Genes em comum entre ClinVar e Orphanet"
+    ],
+    "omim_hpo": [
+      "OMIM phenotypes frequentemente mapeados para HPO",
+      "Nosso sistema já tem alguns mapeamentos OMIM→ORPHA",
+      "Possível expansão dos relacionamentos existentes"
+    ],
+    "omim_orphanet": [
+      "Mapeamentos OMIM→Orphanet já existem parcialmente",
+      "Possível expansão com dados OMIM diretos",
+      "Cross-references entre as duas bases"
+    ]
+  },
+  "avaliacao_fair": {
+    "clinvar": {
+      "findable": "A+ - IDs únicos, metadados ricos, indexação NCBI",
+      "accessible": "A+ - API pública, formatos padrão, sem autenticação",
+      "interoperable": "A - Formatos XML/JSON, vocabulários controlados",
+      "reusable": "A+ - Domínio público, bem documentado, versionado"
+    },
+    "omim": {
+      "findable": "B+ - IDs únicos, boa indexação, metadados estruturados",
+      "accessible": "B - API disponível mas requer autenticação",
+      "interoperable": "B+ - Formatos padrão, algumas inconsistências",
+      "reusable": "B - Licença restritiva, boa documentação"
+    }
+  },
+  "recomendacoes": [
+    "1. Começar com ClinVar (acesso livre e imediato)",
+    "2. Solicitar API key OMIM para pesquisa acadêmica",
+    "3. Implementar rate limiting e cache local",
+    "4. Priorizar campos com relacionamentos HPO/Orphanet",
+    "5. Criar pipeline incremental de atualização"
+  ]
+}

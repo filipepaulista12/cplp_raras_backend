@@ -1,0 +1,80 @@
+{
+  "inicio": "2025-09-11T13:44:38.432Z",
+  "etapas": {
+    "download": {
+      "status": "sucesso",
+      "conjuntos_dados": 7,
+      "total_registros": 261525
+    },
+    "carga": {
+      "status": "sucesso",
+      "total_registros": 0,
+      "componentes_carregados": 7
+    },
+    "validacao": {
+      "status": "problemas_detectados",
+      "total_registros_orphanet": 11239,
+      "problemas": [
+        "Fenótipos ainda vazios",
+        "Epidemiologia ainda vazia",
+        "Sinais clínicos ainda vazios",
+        "Associações genéticas ainda vazias"
+      ],
+      "contagens": {
+        "diseases": 11239,
+        "phenotypes": 0,
+        "epidemiology": 0,
+        "clinical_signs": 0,
+        "gene_associations": 0,
+        "natural_history": 0,
+        "textual_information": 0,
+        "cplp_epidemiology": 0
+      }
+    }
+  },
+  "dados_baixados": {
+    "phenotypes": {
+      "arquivo": "data\\orphanet-completo\\orphanet-phenotypes-2025-09-11T13-44-38-425Z.json",
+      "registros": 67700
+    },
+    "epidemiology": {
+      "arquivo": "data\\orphanet-completo\\orphanet-epidemiology-2025-09-11T13-44-38-425Z.json",
+      "registros": 23985
+    },
+    "clinical_signs": {
+      "arquivo": "data\\orphanet-completo\\orphanet-clinical_signs-2025-09-11T13-44-38-425Z.json",
+      "registros": 71370
+    },
+    "gene_associations": {
+      "arquivo": "data\\orphanet-completo\\orphanet-gene_associations-2025-09-11T13-44-38-425Z.json",
+      "registros": 15934
+    },
+    "natural_history": {
+      "arquivo": "data\\orphanet-completo\\orphanet-natural_history-2025-09-11T13-44-38-425Z.json",
+      "registros": 17473
+    },
+    "textual_information": {
+      "arquivo": "data\\orphanet-completo\\orphanet-textual_information-2025-09-11T13-44-38-425Z.json",
+      "registros": 55075
+    },
+    "cplp_epidemiology": {
+      "arquivo": "data\\orphanet-completo\\orphanet-cplp_epidemiology-2025-09-11T13-44-38-425Z.json",
+      "registros": 9988
+    }
+  },
+  "dados_carregados": {
+    "phenotypes": 0,
+    "epidemiology": 0,
+    "clinical_signs": 0,
+    "gene_associations": 0,
+    "natural_history": 0,
+    "textual_information": 0,
+    "cplp_epidemiology": 0,
+    "total": 0
+  },
+  "erros": [],
+  "sucessos": [],
+  "status": "sucesso_completo",
+  "fim": "2025-09-11T13:53:35.015Z",
+  "duracao_total": 536583
+}

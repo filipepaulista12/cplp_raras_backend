@@ -1,0 +1,17 @@
+{
+  "inicio": "2025-09-11T13:33:05.474Z",
+  "validacoes": {},
+  "metricas_performance": {},
+  "integridade_dados": {},
+  "testes_funcionais": {},
+  "preparacao_fase2": {},
+  "erros": [
+    "Integridade: Table 'cplp_raras.hpo_synonyms' doesn't exist"
+  ],
+  "sucessos": [],
+  "status": "precisa_ajustes",
+  "score_qualidade": 0,
+  "erro_fatal": "Table 'cplp_raras.hpo_synonyms' doesn't exist",
+  "fim": "2025-09-11T13:33:05.704Z",
+  "duracao_total": 230
+}

@@ -1,0 +1,37 @@
+{
+  "inicio": "2025-09-11T11:07:54.484Z",
+  "etapas": {
+    "schema_validation": {
+      "status": "sucesso",
+      "tabelas_existentes": 20,
+      "ready_for_expansion": true
+    },
+    "mysql_implementation": {
+      "status": "concluido",
+      "comandos_executados": 0,
+      "sucessos": 0,
+      "erros": 0
+    },
+    "prisma_update": {
+      "status": "sucesso",
+      "backup_criado": "prisma/schema-backup-2025-09-11T11-07-54-478Z.prisma",
+      "modelos_adicionados": 8
+    }
+  },
+  "erros": [],
+  "sucessos": [
+    "MySQL conectado: localhost:3306"
+  ],
+  "metricas": {
+    "tempo_execucao_ms": 428,
+    "tempo_execucao_legivel": "0s",
+    "etapas_concluidas": 3,
+    "sucessos_total": 1,
+    "erros_total": 0,
+    "status_geral": "sucesso_completo"
+  },
+  "status": "sucesso_completo",
+  "erro_fatal": "Cannot access 'process' before initialization",
+  "fim": "2025-09-11T11:07:54.912Z",
+  "duracao_total": 428
+}

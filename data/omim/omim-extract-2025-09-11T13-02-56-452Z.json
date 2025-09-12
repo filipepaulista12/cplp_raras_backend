@@ -1,0 +1,3091 @@
+{
+  "entries": [
+    {
+      "omim_id": "143890",
+      "entry_type": "gene_phenotype",
+      "title": "Huntington disease ",
+      "alternative_titles": "Huntington disease (alternative)",
+      "included_titles": "Huntington disease included",
+      "description": "Progressive neurodegenerative disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-06-18",
+      "is_active": true
+    },
+    {
+      "omim_id": "219701",
+      "entry_type": "gene",
+      "title": "Cystic fibrosis ",
+      "alternative_titles": "Cystic fibrosis (alternative)",
+      "included_titles": "Cystic fibrosis included",
+      "description": "Disorder affecting lungs and digestive system. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-08-23",
+      "is_active": true
+    },
+    {
+      "omim_id": "334052",
+      "entry_type": "phenotype",
+      "title": "Wilson disease ",
+      "alternative_titles": "Wilson disease (alternative)",
+      "included_titles": "Wilson disease included",
+      "description": "Copper metabolism disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-11-11",
+      "is_active": true
+    },
+    {
+      "omim_id": "154703",
+      "entry_type": "gene",
+      "title": "Marfan syndrome ",
+      "alternative_titles": "Marfan syndrome (alternative)",
+      "included_titles": "Marfan syndrome included",
+      "description": "Connective tissue disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-08-02",
+      "is_active": true
+    },
+    {
+      "omim_id": "613912",
+      "entry_type": "phenotype",
+      "title": "Spinal muscular atrophy ",
+      "alternative_titles": "Spinal muscular atrophy (alternative)",
+      "included_titles": "Spinal muscular atrophy included",
+      "description": "Motor neuron disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-09-10",
+      "is_active": true
+    },
+    {
+      "omim_id": "151628",
+      "entry_type": "phenotype",
+      "title": "Li-Fraumeni syndrome 1 ",
+      "alternative_titles": "Li-Fraumeni syndrome 1 (alternative)",
+      "included_titles": "Li-Fraumeni syndrome 1 included",
+      "description": "Cancer predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-10-23",
+      "is_active": true
+    },
+    {
+      "omim_id": "114486",
+      "entry_type": "gene",
+      "title": "Breast cancer, familial ",
+      "alternative_titles": "Breast cancer, familial (alternative)",
+      "included_titles": "Breast cancer, familial included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-04-15",
+      "is_active": true
+    },
+    {
+      "omim_id": "600192",
+      "entry_type": "phenotype",
+      "title": "Breast cancer, familial 2 ",
+      "alternative_titles": "Breast cancer, familial 2 (alternative)",
+      "included_titles": "Breast cancer, familial 2 included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-01-09",
+      "is_active": true
+    },
+    {
+      "omim_id": "162208",
+      "entry_type": "gene_phenotype",
+      "title": "Neurofibromatosis, type 1 ",
+      "alternative_titles": "Neurofibromatosis, type 1 (alternative)",
+      "included_titles": "Neurofibromatosis, type 1 included",
+      "description": "Tumor predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-12-09",
+      "is_active": true
+    },
+    {
+      "omim_id": "173909",
+      "entry_type": "gene",
+      "title": "Polycystic kidney disease 1 ",
+      "alternative_titles": "Polycystic kidney disease 1 (alternative)",
+      "included_titles": "Polycystic kidney disease 1 included",
+      "description": "Kidney cystic disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-01-16",
+      "is_active": true
+    },
+    {
+      "omim_id": "143900",
+      "entry_type": "gene",
+      "title": "Huntington disease variant 1",
+      "alternative_titles": "Huntington disease (alternative)",
+      "included_titles": "Huntington disease included",
+      "description": "Progressive neurodegenerative disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-02-16",
+      "is_active": true
+    },
+    {
+      "omim_id": "219711",
+      "entry_type": "gene",
+      "title": "Cystic fibrosis variant 1",
+      "alternative_titles": "Cystic fibrosis (alternative)",
+      "included_titles": "Cystic fibrosis included",
+      "description": "Disorder affecting lungs and digestive system. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-05-20",
+      "is_active": true
+    },
+    {
+      "omim_id": "334062",
+      "entry_type": "gene",
+      "title": "Wilson disease variant 1",
+      "alternative_titles": "Wilson disease (alternative)",
+      "included_titles": "Wilson disease included",
+      "description": "Copper metabolism disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-05-27",
+      "is_active": true
+    },
+    {
+      "omim_id": "154713",
+      "entry_type": "gene_phenotype",
+      "title": "Marfan syndrome variant 1",
+      "alternative_titles": "Marfan syndrome (alternative)",
+      "included_titles": "Marfan syndrome included",
+      "description": "Connective tissue disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-06-02",
+      "is_active": true
+    },
+    {
+      "omim_id": "613922",
+      "entry_type": "gene_phenotype",
+      "title": "Spinal muscular atrophy variant 1",
+      "alternative_titles": "Spinal muscular atrophy (alternative)",
+      "included_titles": "Spinal muscular atrophy included",
+      "description": "Motor neuron disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-11-25",
+      "is_active": true
+    },
+    {
+      "omim_id": "151638",
+      "entry_type": "phenotype",
+      "title": "Li-Fraumeni syndrome 1 variant 1",
+      "alternative_titles": "Li-Fraumeni syndrome 1 (alternative)",
+      "included_titles": "Li-Fraumeni syndrome 1 included",
+      "description": "Cancer predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-01-02",
+      "is_active": true
+    },
+    {
+      "omim_id": "114496",
+      "entry_type": "gene_phenotype",
+      "title": "Breast cancer, familial variant 1",
+      "alternative_titles": "Breast cancer, familial (alternative)",
+      "included_titles": "Breast cancer, familial included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-05-31",
+      "is_active": true
+    },
+    {
+      "omim_id": "600202",
+      "entry_type": "phenotype",
+      "title": "Breast cancer, familial 2 variant 1",
+      "alternative_titles": "Breast cancer, familial 2 (alternative)",
+      "included_titles": "Breast cancer, familial 2 included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-08-03",
+      "is_active": true
+    },
+    {
+      "omim_id": "162218",
+      "entry_type": "phenotype",
+      "title": "Neurofibromatosis, type 1 variant 1",
+      "alternative_titles": "Neurofibromatosis, type 1 (alternative)",
+      "included_titles": "Neurofibromatosis, type 1 included",
+      "description": "Tumor predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-02-06",
+      "is_active": true
+    },
+    {
+      "omim_id": "173919",
+      "entry_type": "gene",
+      "title": "Polycystic kidney disease 1 variant 1",
+      "alternative_titles": "Polycystic kidney disease 1 (alternative)",
+      "included_titles": "Polycystic kidney disease 1 included",
+      "description": "Kidney cystic disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-03-09",
+      "is_active": true
+    },
+    {
+      "omim_id": "143910",
+      "entry_type": "phenotype",
+      "title": "Huntington disease variant 2",
+      "alternative_titles": "Huntington disease (alternative)",
+      "included_titles": "Huntington disease included",
+      "description": "Progressive neurodegenerative disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-12-11",
+      "is_active": true
+    },
+    {
+      "omim_id": "219721",
+      "entry_type": "gene",
+      "title": "Cystic fibrosis variant 2",
+      "alternative_titles": "Cystic fibrosis (alternative)",
+      "included_titles": "Cystic fibrosis included",
+      "description": "Disorder affecting lungs and digestive system. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-03-01",
+      "is_active": true
+    },
+    {
+      "omim_id": "334072",
+      "entry_type": "gene_phenotype",
+      "title": "Wilson disease variant 2",
+      "alternative_titles": "Wilson disease (alternative)",
+      "included_titles": "Wilson disease included",
+      "description": "Copper metabolism disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-09-24",
+      "is_active": true
+    },
+    {
+      "omim_id": "154723",
+      "entry_type": "phenotype",
+      "title": "Marfan syndrome variant 2",
+      "alternative_titles": "Marfan syndrome (alternative)",
+      "included_titles": "Marfan syndrome included",
+      "description": "Connective tissue disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-05-11",
+      "is_active": true
+    },
+    {
+      "omim_id": "613932",
+      "entry_type": "gene",
+      "title": "Spinal muscular atrophy variant 2",
+      "alternative_titles": "Spinal muscular atrophy (alternative)",
+      "included_titles": "Spinal muscular atrophy included",
+      "description": "Motor neuron disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-08-24",
+      "is_active": true
+    },
+    {
+      "omim_id": "151648",
+      "entry_type": "gene_phenotype",
+      "title": "Li-Fraumeni syndrome 1 variant 2",
+      "alternative_titles": "Li-Fraumeni syndrome 1 (alternative)",
+      "included_titles": "Li-Fraumeni syndrome 1 included",
+      "description": "Cancer predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-06-26",
+      "is_active": true
+    },
+    {
+      "omim_id": "114506",
+      "entry_type": "gene_phenotype",
+      "title": "Breast cancer, familial variant 2",
+      "alternative_titles": "Breast cancer, familial (alternative)",
+      "included_titles": "Breast cancer, familial included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-12-03",
+      "is_active": true
+    },
+    {
+      "omim_id": "600212",
+      "entry_type": "gene",
+      "title": "Breast cancer, familial 2 variant 2",
+      "alternative_titles": "Breast cancer, familial 2 (alternative)",
+      "included_titles": "Breast cancer, familial 2 included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-02-02",
+      "is_active": true
+    },
+    {
+      "omim_id": "162228",
+      "entry_type": "gene_phenotype",
+      "title": "Neurofibromatosis, type 1 variant 2",
+      "alternative_titles": "Neurofibromatosis, type 1 (alternative)",
+      "included_titles": "Neurofibromatosis, type 1 included",
+      "description": "Tumor predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-07-15",
+      "is_active": true
+    },
+    {
+      "omim_id": "173929",
+      "entry_type": "phenotype",
+      "title": "Polycystic kidney disease 1 variant 2",
+      "alternative_titles": "Polycystic kidney disease 1 (alternative)",
+      "included_titles": "Polycystic kidney disease 1 included",
+      "description": "Kidney cystic disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-08-21",
+      "is_active": true
+    },
+    {
+      "omim_id": "143920",
+      "entry_type": "phenotype",
+      "title": "Huntington disease variant 3",
+      "alternative_titles": "Huntington disease (alternative)",
+      "included_titles": "Huntington disease included",
+      "description": "Progressive neurodegenerative disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-08-22",
+      "is_active": true
+    },
+    {
+      "omim_id": "219731",
+      "entry_type": "gene",
+      "title": "Cystic fibrosis variant 3",
+      "alternative_titles": "Cystic fibrosis (alternative)",
+      "included_titles": "Cystic fibrosis included",
+      "description": "Disorder affecting lungs and digestive system. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-06-18",
+      "is_active": true
+    },
+    {
+      "omim_id": "334082",
+      "entry_type": "gene_phenotype",
+      "title": "Wilson disease variant 3",
+      "alternative_titles": "Wilson disease (alternative)",
+      "included_titles": "Wilson disease included",
+      "description": "Copper metabolism disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-05-19",
+      "is_active": true
+    },
+    {
+      "omim_id": "154733",
+      "entry_type": "phenotype",
+      "title": "Marfan syndrome variant 3",
+      "alternative_titles": "Marfan syndrome (alternative)",
+      "included_titles": "Marfan syndrome included",
+      "description": "Connective tissue disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-11-10",
+      "is_active": true
+    },
+    {
+      "omim_id": "613942",
+      "entry_type": "phenotype",
+      "title": "Spinal muscular atrophy variant 3",
+      "alternative_titles": "Spinal muscular atrophy (alternative)",
+      "included_titles": "Spinal muscular atrophy included",
+      "description": "Motor neuron disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-08-05",
+      "is_active": true
+    },
+    {
+      "omim_id": "151658",
+      "entry_type": "gene_phenotype",
+      "title": "Li-Fraumeni syndrome 1 variant 3",
+      "alternative_titles": "Li-Fraumeni syndrome 1 (alternative)",
+      "included_titles": "Li-Fraumeni syndrome 1 included",
+      "description": "Cancer predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-12-20",
+      "is_active": true
+    },
+    {
+      "omim_id": "114516",
+      "entry_type": "gene",
+      "title": "Breast cancer, familial variant 3",
+      "alternative_titles": "Breast cancer, familial (alternative)",
+      "included_titles": "Breast cancer, familial included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-09-06",
+      "is_active": true
+    },
+    {
+      "omim_id": "600222",
+      "entry_type": "gene",
+      "title": "Breast cancer, familial 2 variant 3",
+      "alternative_titles": "Breast cancer, familial 2 (alternative)",
+      "included_titles": "Breast cancer, familial 2 included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-02-21",
+      "is_active": true
+    },
+    {
+      "omim_id": "162238",
+      "entry_type": "phenotype",
+      "title": "Neurofibromatosis, type 1 variant 3",
+      "alternative_titles": "Neurofibromatosis, type 1 (alternative)",
+      "included_titles": "Neurofibromatosis, type 1 included",
+      "description": "Tumor predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-06-20",
+      "is_active": true
+    },
+    {
+      "omim_id": "173939",
+      "entry_type": "gene",
+      "title": "Polycystic kidney disease 1 variant 3",
+      "alternative_titles": "Polycystic kidney disease 1 (alternative)",
+      "included_titles": "Polycystic kidney disease 1 included",
+      "description": "Kidney cystic disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-09-20",
+      "is_active": true
+    },
+    {
+      "omim_id": "143930",
+      "entry_type": "gene_phenotype",
+      "title": "Huntington disease variant 4",
+      "alternative_titles": "Huntington disease (alternative)",
+      "included_titles": "Huntington disease included",
+      "description": "Progressive neurodegenerative disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-08-11",
+      "is_active": true
+    },
+    {
+      "omim_id": "219741",
+      "entry_type": "phenotype",
+      "title": "Cystic fibrosis variant 4",
+      "alternative_titles": "Cystic fibrosis (alternative)",
+      "included_titles": "Cystic fibrosis included",
+      "description": "Disorder affecting lungs and digestive system. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-12-08",
+      "is_active": true
+    },
+    {
+      "omim_id": "334092",
+      "entry_type": "phenotype",
+      "title": "Wilson disease variant 4",
+      "alternative_titles": "Wilson disease (alternative)",
+      "included_titles": "Wilson disease included",
+      "description": "Copper metabolism disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-04-27",
+      "is_active": true
+    },
+    {
+      "omim_id": "154743",
+      "entry_type": "phenotype",
+      "title": "Marfan syndrome variant 4",
+      "alternative_titles": "Marfan syndrome (alternative)",
+      "included_titles": "Marfan syndrome included",
+      "description": "Connective tissue disorder. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-01-08",
+      "is_active": true
+    },
+    {
+      "omim_id": "613952",
+      "entry_type": "gene_phenotype",
+      "title": "Spinal muscular atrophy variant 4",
+      "alternative_titles": "Spinal muscular atrophy (alternative)",
+      "included_titles": "Spinal muscular atrophy included",
+      "description": "Motor neuron disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal recessive",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-06-11",
+      "is_active": true
+    },
+    {
+      "omim_id": "151668",
+      "entry_type": "gene_phenotype",
+      "title": "Li-Fraumeni syndrome 1 variant 4",
+      "alternative_titles": "Li-Fraumeni syndrome 1 (alternative)",
+      "included_titles": "Li-Fraumeni syndrome 1 included",
+      "description": "Cancer predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-01-08",
+      "is_active": true
+    },
+    {
+      "omim_id": "114526",
+      "entry_type": "phenotype",
+      "title": "Breast cancer, familial variant 4",
+      "alternative_titles": "Breast cancer, familial (alternative)",
+      "included_titles": "Breast cancer, familial included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-05-24",
+      "is_active": true
+    },
+    {
+      "omim_id": "600232",
+      "entry_type": "phenotype",
+      "title": "Breast cancer, familial 2 variant 4",
+      "alternative_titles": "Breast cancer, familial 2 (alternative)",
+      "included_titles": "Breast cancer, familial 2 included",
+      "description": "Hereditary breast and ovarian cancer. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-06-01",
+      "is_active": true
+    },
+    {
+      "omim_id": "162248",
+      "entry_type": "gene_phenotype",
+      "title": "Neurofibromatosis, type 1 variant 4",
+      "alternative_titles": "Neurofibromatosis, type 1 (alternative)",
+      "included_titles": "Neurofibromatosis, type 1 included",
+      "description": "Tumor predisposition syndrome. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-06-27",
+      "is_active": true
+    },
+    {
+      "omim_id": "173949",
+      "entry_type": "gene",
+      "title": "Polycystic kidney disease 1 variant 4",
+      "alternative_titles": "Polycystic kidney disease 1 (alternative)",
+      "included_titles": "Polycystic kidney disease 1 included",
+      "description": "Kidney cystic disease. Detailed clinical description with molecular basis.",
+      "inheritance_pattern": "Autosomal dominant",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3",
+      "created_date": "1990-01-01",
+      "edited_date": "2024-01-07",
+      "is_active": true
+    }
+  ],
+  "phenotypes": [
+    {
+      "omim_entry_id": "143890",
+      "phenotype_name": "Huntington disease phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "219701",
+      "phenotype_name": "Cystic fibrosis phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "219701",
+      "phenotype_name": "Cystic fibrosis phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "334052",
+      "phenotype_name": "Wilson disease phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3"
+    },
+    {
+      "omim_entry_id": "154703",
+      "phenotype_name": "Marfan syndrome phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "154703",
+      "phenotype_name": "Marfan syndrome phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "613912",
+      "phenotype_name": "Spinal muscular atrophy phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "613912",
+      "phenotype_name": "Spinal muscular atrophy phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "151628",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "151628",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "151628",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "114486",
+      "phenotype_name": "Breast cancer, familial phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31"
+    },
+    {
+      "omim_entry_id": "114486",
+      "phenotype_name": "Breast cancer, familial phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31"
+    },
+    {
+      "omim_entry_id": "114486",
+      "phenotype_name": "Breast cancer, familial phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31"
+    },
+    {
+      "omim_entry_id": "600192",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "600192",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "600192",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "162208",
+      "phenotype_name": "Neurofibromatosis, type 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2"
+    },
+    {
+      "omim_entry_id": "173909",
+      "phenotype_name": "Polycystic kidney disease 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3"
+    },
+    {
+      "omim_entry_id": "173909",
+      "phenotype_name": "Polycystic kidney disease 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3"
+    },
+    {
+      "omim_entry_id": "143900",
+      "phenotype_name": "Huntington disease phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "219711",
+      "phenotype_name": "Cystic fibrosis phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "219711",
+      "phenotype_name": "Cystic fibrosis phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "334062",
+      "phenotype_name": "Wilson disease phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3"
+    },
+    {
+      "omim_entry_id": "334062",
+      "phenotype_name": "Wilson disease phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3"
+    },
+    {
+      "omim_entry_id": "154713",
+      "phenotype_name": "Marfan syndrome phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "154713",
+      "phenotype_name": "Marfan syndrome phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "613922",
+      "phenotype_name": "Spinal muscular atrophy phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "613922",
+      "phenotype_name": "Spinal muscular atrophy phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "151638",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "151638",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "114496",
+      "phenotype_name": "Breast cancer, familial phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31"
+    },
+    {
+      "omim_entry_id": "600202",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "600202",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "600202",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "162218",
+      "phenotype_name": "Neurofibromatosis, type 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2"
+    },
+    {
+      "omim_entry_id": "162218",
+      "phenotype_name": "Neurofibromatosis, type 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2"
+    },
+    {
+      "omim_entry_id": "173919",
+      "phenotype_name": "Polycystic kidney disease 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3"
+    },
+    {
+      "omim_entry_id": "143910",
+      "phenotype_name": "Huntington disease phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "143910",
+      "phenotype_name": "Huntington disease phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "143910",
+      "phenotype_name": "Huntington disease phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "219721",
+      "phenotype_name": "Cystic fibrosis phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "219721",
+      "phenotype_name": "Cystic fibrosis phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "334072",
+      "phenotype_name": "Wilson disease phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3"
+    },
+    {
+      "omim_entry_id": "334072",
+      "phenotype_name": "Wilson disease phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3"
+    },
+    {
+      "omim_entry_id": "334072",
+      "phenotype_name": "Wilson disease phenotype 3",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3"
+    },
+    {
+      "omim_entry_id": "154723",
+      "phenotype_name": "Marfan syndrome phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "154723",
+      "phenotype_name": "Marfan syndrome phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "154723",
+      "phenotype_name": "Marfan syndrome phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "613932",
+      "phenotype_name": "Spinal muscular atrophy phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "613932",
+      "phenotype_name": "Spinal muscular atrophy phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "151648",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "151648",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "114506",
+      "phenotype_name": "Breast cancer, familial phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31"
+    },
+    {
+      "omim_entry_id": "600212",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "162228",
+      "phenotype_name": "Neurofibromatosis, type 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2"
+    },
+    {
+      "omim_entry_id": "173929",
+      "phenotype_name": "Polycystic kidney disease 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3"
+    },
+    {
+      "omim_entry_id": "143920",
+      "phenotype_name": "Huntington disease phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "143920",
+      "phenotype_name": "Huntington disease phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "143920",
+      "phenotype_name": "Huntington disease phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "219731",
+      "phenotype_name": "Cystic fibrosis phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "219731",
+      "phenotype_name": "Cystic fibrosis phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "219731",
+      "phenotype_name": "Cystic fibrosis phenotype 3",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "334082",
+      "phenotype_name": "Wilson disease phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3"
+    },
+    {
+      "omim_entry_id": "154733",
+      "phenotype_name": "Marfan syndrome phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "154733",
+      "phenotype_name": "Marfan syndrome phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "613942",
+      "phenotype_name": "Spinal muscular atrophy phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "613942",
+      "phenotype_name": "Spinal muscular atrophy phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "151658",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "151658",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "114516",
+      "phenotype_name": "Breast cancer, familial phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31"
+    },
+    {
+      "omim_entry_id": "600222",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "600222",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "600222",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "162238",
+      "phenotype_name": "Neurofibromatosis, type 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2"
+    },
+    {
+      "omim_entry_id": "162238",
+      "phenotype_name": "Neurofibromatosis, type 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2"
+    },
+    {
+      "omim_entry_id": "162238",
+      "phenotype_name": "Neurofibromatosis, type 1 phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2"
+    },
+    {
+      "omim_entry_id": "173939",
+      "phenotype_name": "Polycystic kidney disease 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3"
+    },
+    {
+      "omim_entry_id": "173939",
+      "phenotype_name": "Polycystic kidney disease 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3"
+    },
+    {
+      "omim_entry_id": "143930",
+      "phenotype_name": "Huntington disease phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "143930",
+      "phenotype_name": "Huntington disease phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "143930",
+      "phenotype_name": "Huntington disease phenotype 3",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "HTT",
+      "chromosome_location": "4p16.3"
+    },
+    {
+      "omim_entry_id": "219741",
+      "phenotype_name": "Cystic fibrosis phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "CFTR",
+      "chromosome_location": "7q31.2"
+    },
+    {
+      "omim_entry_id": "334092",
+      "phenotype_name": "Wilson disease phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "ATP7B",
+      "chromosome_location": "13q14.3"
+    },
+    {
+      "omim_entry_id": "154743",
+      "phenotype_name": "Marfan syndrome phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "FBN1",
+      "chromosome_location": "15q21.1"
+    },
+    {
+      "omim_entry_id": "613952",
+      "phenotype_name": "Spinal muscular atrophy phenotype 1",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "613952",
+      "phenotype_name": "Spinal muscular atrophy phenotype 2",
+      "inheritance_pattern": "Autosomal recessive",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "SMN1",
+      "chromosome_location": "5q13.2"
+    },
+    {
+      "omim_entry_id": "151668",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "151668",
+      "phenotype_name": "Li-Fraumeni syndrome 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "TP53",
+      "chromosome_location": "17p13.1"
+    },
+    {
+      "omim_entry_id": "114526",
+      "phenotype_name": "Breast cancer, familial phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31"
+    },
+    {
+      "omim_entry_id": "114526",
+      "phenotype_name": "Breast cancer, familial phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA1",
+      "chromosome_location": "17q21.31"
+    },
+    {
+      "omim_entry_id": "600232",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "600232",
+      "phenotype_name": "Breast cancer, familial 2 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "BRCA2",
+      "chromosome_location": "13q13.1"
+    },
+    {
+      "omim_entry_id": "162248",
+      "phenotype_name": "Neurofibromatosis, type 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2"
+    },
+    {
+      "omim_entry_id": "162248",
+      "phenotype_name": "Neurofibromatosis, type 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "NF1",
+      "chromosome_location": "17q11.2"
+    },
+    {
+      "omim_entry_id": "173949",
+      "phenotype_name": "Polycystic kidney disease 1 phenotype 1",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3"
+    },
+    {
+      "omim_entry_id": "173949",
+      "phenotype_name": "Polycystic kidney disease 1 phenotype 2",
+      "inheritance_pattern": "Autosomal dominant",
+      "mapping_method": "molecular basis known",
+      "gene_symbol": "PKD1",
+      "chromosome_location": "16p13.3"
+    }
+  ],
+  "external_mappings": [
+    {
+      "omim_entry_id": "143890",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100000",
+      "mapping_type": "exact",
+      "confidence_score": 0.9780816980973625,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143890",
+      "external_db": "MedGen",
+      "external_id": "C0000000",
+      "mapping_type": "exact",
+      "confidence_score": 0.9844814933344489,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143890",
+      "external_db": "UMLS",
+      "external_id": "C0000000",
+      "mapping_type": "exact",
+      "confidence_score": 0.9323391235170894,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143890",
+      "external_db": "ICD10",
+      "external_id": "Q00.0",
+      "mapping_type": "exact",
+      "confidence_score": 0.9161204414342096,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219701",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100001",
+      "mapping_type": "exact",
+      "confidence_score": 0.9875225656376597,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219701",
+      "external_db": "MedGen",
+      "external_id": "C0000001",
+      "mapping_type": "exact",
+      "confidence_score": 0.9658514371271798,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219701",
+      "external_db": "UMLS",
+      "external_id": "C0000001",
+      "mapping_type": "exact",
+      "confidence_score": 0.9215459048607689,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219701",
+      "external_db": "ICD10",
+      "external_id": "Q00.1",
+      "mapping_type": "exact",
+      "confidence_score": 0.9495627269783805,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334052",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100002",
+      "mapping_type": "exact",
+      "confidence_score": 0.9155747361682867,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334052",
+      "external_db": "MedGen",
+      "external_id": "C0000002",
+      "mapping_type": "exact",
+      "confidence_score": 0.9535619942807408,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334052",
+      "external_db": "UMLS",
+      "external_id": "C0000002",
+      "mapping_type": "exact",
+      "confidence_score": 0.936659371251914,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334052",
+      "external_db": "ICD10",
+      "external_id": "Q00.2",
+      "mapping_type": "exact",
+      "confidence_score": 0.9394230924625486,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154703",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100003",
+      "mapping_type": "exact",
+      "confidence_score": 0.9132796844774511,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154703",
+      "external_db": "MedGen",
+      "external_id": "C0000003",
+      "mapping_type": "exact",
+      "confidence_score": 0.9796477736247858,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154703",
+      "external_db": "UMLS",
+      "external_id": "C0000003",
+      "mapping_type": "exact",
+      "confidence_score": 0.9730480470279416,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154703",
+      "external_db": "ICD10",
+      "external_id": "Q00.3",
+      "mapping_type": "exact",
+      "confidence_score": 0.9204747112728494,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613912",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100004",
+      "mapping_type": "exact",
+      "confidence_score": 0.9901961688741635,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613912",
+      "external_db": "MedGen",
+      "external_id": "C0000004",
+      "mapping_type": "exact",
+      "confidence_score": 0.9114193983768661,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613912",
+      "external_db": "UMLS",
+      "external_id": "C0000004",
+      "mapping_type": "exact",
+      "confidence_score": 0.9230300874059405,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613912",
+      "external_db": "ICD10",
+      "external_id": "Q00.4",
+      "mapping_type": "exact",
+      "confidence_score": 0.9694310139139719,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151628",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100005",
+      "mapping_type": "exact",
+      "confidence_score": 0.9231939496693499,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151628",
+      "external_db": "MedGen",
+      "external_id": "C0000005",
+      "mapping_type": "exact",
+      "confidence_score": 0.9133065141102819,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151628",
+      "external_db": "UMLS",
+      "external_id": "C0000005",
+      "mapping_type": "exact",
+      "confidence_score": 0.9197439333415811,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151628",
+      "external_db": "ICD10",
+      "external_id": "Q00.5",
+      "mapping_type": "exact",
+      "confidence_score": 0.9718310553334674,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114486",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100006",
+      "mapping_type": "exact",
+      "confidence_score": 0.9612468927754443,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114486",
+      "external_db": "MedGen",
+      "external_id": "C0000006",
+      "mapping_type": "exact",
+      "confidence_score": 0.9156790657978192,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114486",
+      "external_db": "UMLS",
+      "external_id": "C0000006",
+      "mapping_type": "exact",
+      "confidence_score": 0.9570284026252622,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114486",
+      "external_db": "ICD10",
+      "external_id": "Q00.6",
+      "mapping_type": "exact",
+      "confidence_score": 0.9919515171423489,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600192",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100007",
+      "mapping_type": "exact",
+      "confidence_score": 0.9584093141171398,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600192",
+      "external_db": "MedGen",
+      "external_id": "C0000007",
+      "mapping_type": "exact",
+      "confidence_score": 0.9707617784484789,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600192",
+      "external_db": "UMLS",
+      "external_id": "C0000007",
+      "mapping_type": "exact",
+      "confidence_score": 0.9920801376503529,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600192",
+      "external_db": "ICD10",
+      "external_id": "Q00.7",
+      "mapping_type": "exact",
+      "confidence_score": 0.9871410787824484,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162208",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100008",
+      "mapping_type": "exact",
+      "confidence_score": 0.9590059939103729,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162208",
+      "external_db": "MedGen",
+      "external_id": "C0000008",
+      "mapping_type": "exact",
+      "confidence_score": 0.9118239613009482,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162208",
+      "external_db": "UMLS",
+      "external_id": "C0000008",
+      "mapping_type": "exact",
+      "confidence_score": 0.954939937868025,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162208",
+      "external_db": "ICD10",
+      "external_id": "Q00.8",
+      "mapping_type": "exact",
+      "confidence_score": 0.9465365159215943,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173909",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100009",
+      "mapping_type": "exact",
+      "confidence_score": 0.9588710425471644,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173909",
+      "external_db": "MedGen",
+      "external_id": "C0000009",
+      "mapping_type": "exact",
+      "confidence_score": 0.9505626450344709,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173909",
+      "external_db": "UMLS",
+      "external_id": "C0000009",
+      "mapping_type": "exact",
+      "confidence_score": 0.997058974939432,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173909",
+      "external_db": "ICD10",
+      "external_id": "Q00.9",
+      "mapping_type": "exact",
+      "confidence_score": 0.9168972053699362,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143900",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100010",
+      "mapping_type": "exact",
+      "confidence_score": 0.9695581339461734,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143900",
+      "external_db": "MedGen",
+      "external_id": "C0000010",
+      "mapping_type": "exact",
+      "confidence_score": 0.9812629752448048,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143900",
+      "external_db": "UMLS",
+      "external_id": "C0000010",
+      "mapping_type": "exact",
+      "confidence_score": 0.940941477326538,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143900",
+      "external_db": "ICD10",
+      "external_id": "Q01.0",
+      "mapping_type": "exact",
+      "confidence_score": 0.940523265277971,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219711",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100011",
+      "mapping_type": "exact",
+      "confidence_score": 0.9548977867931102,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219711",
+      "external_db": "MedGen",
+      "external_id": "C0000011",
+      "mapping_type": "exact",
+      "confidence_score": 0.9196201980410944,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219711",
+      "external_db": "UMLS",
+      "external_id": "C0000011",
+      "mapping_type": "exact",
+      "confidence_score": 0.9752735077405269,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219711",
+      "external_db": "ICD10",
+      "external_id": "Q01.1",
+      "mapping_type": "exact",
+      "confidence_score": 0.9827517644184346,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334062",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100012",
+      "mapping_type": "exact",
+      "confidence_score": 0.9056263575076119,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334062",
+      "external_db": "MedGen",
+      "external_id": "C0000012",
+      "mapping_type": "exact",
+      "confidence_score": 0.949552464176815,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334062",
+      "external_db": "UMLS",
+      "external_id": "C0000012",
+      "mapping_type": "exact",
+      "confidence_score": 0.9572769508749419,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334062",
+      "external_db": "ICD10",
+      "external_id": "Q01.2",
+      "mapping_type": "exact",
+      "confidence_score": 0.9093471601684476,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154713",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100013",
+      "mapping_type": "exact",
+      "confidence_score": 0.9665640557715007,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154713",
+      "external_db": "MedGen",
+      "external_id": "C0000013",
+      "mapping_type": "exact",
+      "confidence_score": 0.9557071169341478,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154713",
+      "external_db": "UMLS",
+      "external_id": "C0000013",
+      "mapping_type": "exact",
+      "confidence_score": 0.9142279863632626,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154713",
+      "external_db": "ICD10",
+      "external_id": "Q01.3",
+      "mapping_type": "exact",
+      "confidence_score": 0.9931720169474152,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613922",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100014",
+      "mapping_type": "exact",
+      "confidence_score": 0.9945372580687737,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613922",
+      "external_db": "MedGen",
+      "external_id": "C0000014",
+      "mapping_type": "exact",
+      "confidence_score": 0.9854545747833746,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613922",
+      "external_db": "UMLS",
+      "external_id": "C0000014",
+      "mapping_type": "exact",
+      "confidence_score": 0.9076060918961526,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613922",
+      "external_db": "ICD10",
+      "external_id": "Q01.4",
+      "mapping_type": "exact",
+      "confidence_score": 0.9521970307520893,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151638",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100015",
+      "mapping_type": "exact",
+      "confidence_score": 0.940119141371878,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151638",
+      "external_db": "MedGen",
+      "external_id": "C0000015",
+      "mapping_type": "exact",
+      "confidence_score": 0.9046965516390295,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151638",
+      "external_db": "UMLS",
+      "external_id": "C0000015",
+      "mapping_type": "exact",
+      "confidence_score": 0.9624410981968632,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151638",
+      "external_db": "ICD10",
+      "external_id": "Q01.5",
+      "mapping_type": "exact",
+      "confidence_score": 0.9453450549294924,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114496",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100016",
+      "mapping_type": "exact",
+      "confidence_score": 0.9487459424044019,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114496",
+      "external_db": "MedGen",
+      "external_id": "C0000016",
+      "mapping_type": "exact",
+      "confidence_score": 0.9775654978658573,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114496",
+      "external_db": "UMLS",
+      "external_id": "C0000016",
+      "mapping_type": "exact",
+      "confidence_score": 0.9154648496675017,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114496",
+      "external_db": "ICD10",
+      "external_id": "Q01.6",
+      "mapping_type": "exact",
+      "confidence_score": 0.9935432083203202,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600202",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100017",
+      "mapping_type": "exact",
+      "confidence_score": 0.999535755918745,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600202",
+      "external_db": "MedGen",
+      "external_id": "C0000017",
+      "mapping_type": "exact",
+      "confidence_score": 0.9182694973023118,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600202",
+      "external_db": "UMLS",
+      "external_id": "C0000017",
+      "mapping_type": "exact",
+      "confidence_score": 0.9394155228943267,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600202",
+      "external_db": "ICD10",
+      "external_id": "Q01.7",
+      "mapping_type": "exact",
+      "confidence_score": 0.9084208413807189,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162218",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100018",
+      "mapping_type": "exact",
+      "confidence_score": 0.9673219625198756,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162218",
+      "external_db": "MedGen",
+      "external_id": "C0000018",
+      "mapping_type": "exact",
+      "confidence_score": 0.9707930873547422,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162218",
+      "external_db": "UMLS",
+      "external_id": "C0000018",
+      "mapping_type": "exact",
+      "confidence_score": 0.9853051514836716,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162218",
+      "external_db": "ICD10",
+      "external_id": "Q01.8",
+      "mapping_type": "exact",
+      "confidence_score": 0.9926438988390688,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173919",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100019",
+      "mapping_type": "exact",
+      "confidence_score": 0.9332534010105785,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173919",
+      "external_db": "MedGen",
+      "external_id": "C0000019",
+      "mapping_type": "exact",
+      "confidence_score": 0.9202960905580219,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173919",
+      "external_db": "UMLS",
+      "external_id": "C0000019",
+      "mapping_type": "exact",
+      "confidence_score": 0.9097344457285427,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173919",
+      "external_db": "ICD10",
+      "external_id": "Q01.9",
+      "mapping_type": "exact",
+      "confidence_score": 0.9566752758823093,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143910",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100020",
+      "mapping_type": "exact",
+      "confidence_score": 0.9515238556592677,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143910",
+      "external_db": "MedGen",
+      "external_id": "C0000020",
+      "mapping_type": "exact",
+      "confidence_score": 0.9579597236675687,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143910",
+      "external_db": "UMLS",
+      "external_id": "C0000020",
+      "mapping_type": "exact",
+      "confidence_score": 0.9839915842055027,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143910",
+      "external_db": "ICD10",
+      "external_id": "Q02.0",
+      "mapping_type": "exact",
+      "confidence_score": 0.9172190837300767,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219721",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100021",
+      "mapping_type": "exact",
+      "confidence_score": 0.9035312656540316,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219721",
+      "external_db": "MedGen",
+      "external_id": "C0000021",
+      "mapping_type": "exact",
+      "confidence_score": 0.9001301814636241,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219721",
+      "external_db": "UMLS",
+      "external_id": "C0000021",
+      "mapping_type": "exact",
+      "confidence_score": 0.9829564793503436,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219721",
+      "external_db": "ICD10",
+      "external_id": "Q02.1",
+      "mapping_type": "exact",
+      "confidence_score": 0.9296666339027427,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334072",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100022",
+      "mapping_type": "exact",
+      "confidence_score": 0.9261553596595692,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334072",
+      "external_db": "MedGen",
+      "external_id": "C0000022",
+      "mapping_type": "exact",
+      "confidence_score": 0.9236489461501246,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334072",
+      "external_db": "UMLS",
+      "external_id": "C0000022",
+      "mapping_type": "exact",
+      "confidence_score": 0.9607038843026011,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334072",
+      "external_db": "ICD10",
+      "external_id": "Q02.2",
+      "mapping_type": "exact",
+      "confidence_score": 0.9147852362230906,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154723",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100023",
+      "mapping_type": "exact",
+      "confidence_score": 0.9805608673554984,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154723",
+      "external_db": "MedGen",
+      "external_id": "C0000023",
+      "mapping_type": "exact",
+      "confidence_score": 0.9147061656246067,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154723",
+      "external_db": "UMLS",
+      "external_id": "C0000023",
+      "mapping_type": "exact",
+      "confidence_score": 0.9126100873490683,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154723",
+      "external_db": "ICD10",
+      "external_id": "Q02.3",
+      "mapping_type": "exact",
+      "confidence_score": 0.9137427944114336,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613932",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100024",
+      "mapping_type": "exact",
+      "confidence_score": 0.9425666167174759,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613932",
+      "external_db": "MedGen",
+      "external_id": "C0000024",
+      "mapping_type": "exact",
+      "confidence_score": 0.9983992087484143,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613932",
+      "external_db": "UMLS",
+      "external_id": "C0000024",
+      "mapping_type": "exact",
+      "confidence_score": 0.9233102402042733,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613932",
+      "external_db": "ICD10",
+      "external_id": "Q02.4",
+      "mapping_type": "exact",
+      "confidence_score": 0.9084141830797869,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151648",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100025",
+      "mapping_type": "exact",
+      "confidence_score": 0.914060901004665,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151648",
+      "external_db": "MedGen",
+      "external_id": "C0000025",
+      "mapping_type": "exact",
+      "confidence_score": 0.996400914679298,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151648",
+      "external_db": "UMLS",
+      "external_id": "C0000025",
+      "mapping_type": "exact",
+      "confidence_score": 0.9122941588194956,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151648",
+      "external_db": "ICD10",
+      "external_id": "Q02.5",
+      "mapping_type": "exact",
+      "confidence_score": 0.9304291801683928,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114506",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100026",
+      "mapping_type": "exact",
+      "confidence_score": 0.938770785895835,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114506",
+      "external_db": "MedGen",
+      "external_id": "C0000026",
+      "mapping_type": "exact",
+      "confidence_score": 0.9582000353555757,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114506",
+      "external_db": "UMLS",
+      "external_id": "C0000026",
+      "mapping_type": "exact",
+      "confidence_score": 0.9642355600277785,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114506",
+      "external_db": "ICD10",
+      "external_id": "Q02.6",
+      "mapping_type": "exact",
+      "confidence_score": 0.9889665702033503,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600212",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100027",
+      "mapping_type": "exact",
+      "confidence_score": 0.9157554082568917,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600212",
+      "external_db": "MedGen",
+      "external_id": "C0000027",
+      "mapping_type": "exact",
+      "confidence_score": 0.9122758404017184,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600212",
+      "external_db": "UMLS",
+      "external_id": "C0000027",
+      "mapping_type": "exact",
+      "confidence_score": 0.9850793234519876,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600212",
+      "external_db": "ICD10",
+      "external_id": "Q02.7",
+      "mapping_type": "exact",
+      "confidence_score": 0.916674505735707,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162228",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100028",
+      "mapping_type": "exact",
+      "confidence_score": 0.9418526169580941,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162228",
+      "external_db": "MedGen",
+      "external_id": "C0000028",
+      "mapping_type": "exact",
+      "confidence_score": 0.919659310130242,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162228",
+      "external_db": "UMLS",
+      "external_id": "C0000028",
+      "mapping_type": "exact",
+      "confidence_score": 0.914795225699974,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162228",
+      "external_db": "ICD10",
+      "external_id": "Q02.8",
+      "mapping_type": "exact",
+      "confidence_score": 0.9301240009571795,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173929",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100029",
+      "mapping_type": "exact",
+      "confidence_score": 0.9753047170708647,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173929",
+      "external_db": "MedGen",
+      "external_id": "C0000029",
+      "mapping_type": "exact",
+      "confidence_score": 0.9275510490039043,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173929",
+      "external_db": "UMLS",
+      "external_id": "C0000029",
+      "mapping_type": "exact",
+      "confidence_score": 0.9520076395659212,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173929",
+      "external_db": "ICD10",
+      "external_id": "Q02.9",
+      "mapping_type": "exact",
+      "confidence_score": 0.9028965207191983,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143920",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100030",
+      "mapping_type": "exact",
+      "confidence_score": 0.9791683783344745,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143920",
+      "external_db": "MedGen",
+      "external_id": "C0000030",
+      "mapping_type": "exact",
+      "confidence_score": 0.934368172832535,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143920",
+      "external_db": "UMLS",
+      "external_id": "C0000030",
+      "mapping_type": "exact",
+      "confidence_score": 0.9103094163911699,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143920",
+      "external_db": "ICD10",
+      "external_id": "Q03.0",
+      "mapping_type": "exact",
+      "confidence_score": 0.9519795034340012,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219731",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100031",
+      "mapping_type": "exact",
+      "confidence_score": 0.9578677323912593,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219731",
+      "external_db": "MedGen",
+      "external_id": "C0000031",
+      "mapping_type": "exact",
+      "confidence_score": 0.9574070585456134,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219731",
+      "external_db": "UMLS",
+      "external_id": "C0000031",
+      "mapping_type": "exact",
+      "confidence_score": 0.9950541610605419,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219731",
+      "external_db": "ICD10",
+      "external_id": "Q03.1",
+      "mapping_type": "exact",
+      "confidence_score": 0.9856620994824484,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334082",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100032",
+      "mapping_type": "exact",
+      "confidence_score": 0.9553295086129233,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334082",
+      "external_db": "MedGen",
+      "external_id": "C0000032",
+      "mapping_type": "exact",
+      "confidence_score": 0.9295454205504692,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334082",
+      "external_db": "UMLS",
+      "external_id": "C0000032",
+      "mapping_type": "exact",
+      "confidence_score": 0.9884460704594371,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334082",
+      "external_db": "ICD10",
+      "external_id": "Q03.2",
+      "mapping_type": "exact",
+      "confidence_score": 0.9152617521058819,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154733",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100033",
+      "mapping_type": "exact",
+      "confidence_score": 0.9386203362710969,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154733",
+      "external_db": "MedGen",
+      "external_id": "C0000033",
+      "mapping_type": "exact",
+      "confidence_score": 0.96458457149278,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154733",
+      "external_db": "UMLS",
+      "external_id": "C0000033",
+      "mapping_type": "exact",
+      "confidence_score": 0.9766754748187778,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154733",
+      "external_db": "ICD10",
+      "external_id": "Q03.3",
+      "mapping_type": "exact",
+      "confidence_score": 0.9806643687007046,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613942",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100034",
+      "mapping_type": "exact",
+      "confidence_score": 0.952296954344015,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613942",
+      "external_db": "MedGen",
+      "external_id": "C0000034",
+      "mapping_type": "exact",
+      "confidence_score": 0.9947433393528915,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613942",
+      "external_db": "UMLS",
+      "external_id": "C0000034",
+      "mapping_type": "exact",
+      "confidence_score": 0.9491390471638325,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613942",
+      "external_db": "ICD10",
+      "external_id": "Q03.4",
+      "mapping_type": "exact",
+      "confidence_score": 0.9797439487369982,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151658",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100035",
+      "mapping_type": "exact",
+      "confidence_score": 0.9594701569080434,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151658",
+      "external_db": "MedGen",
+      "external_id": "C0000035",
+      "mapping_type": "exact",
+      "confidence_score": 0.9186264872132592,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151658",
+      "external_db": "UMLS",
+      "external_id": "C0000035",
+      "mapping_type": "exact",
+      "confidence_score": 0.9574363248700044,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151658",
+      "external_db": "ICD10",
+      "external_id": "Q03.5",
+      "mapping_type": "exact",
+      "confidence_score": 0.9117198542994761,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114516",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100036",
+      "mapping_type": "exact",
+      "confidence_score": 0.9885318847805991,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114516",
+      "external_db": "MedGen",
+      "external_id": "C0000036",
+      "mapping_type": "exact",
+      "confidence_score": 0.9107520093561298,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114516",
+      "external_db": "UMLS",
+      "external_id": "C0000036",
+      "mapping_type": "exact",
+      "confidence_score": 0.9581012776876506,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114516",
+      "external_db": "ICD10",
+      "external_id": "Q03.6",
+      "mapping_type": "exact",
+      "confidence_score": 0.942593990368378,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600222",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100037",
+      "mapping_type": "exact",
+      "confidence_score": 0.9322372113582292,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600222",
+      "external_db": "MedGen",
+      "external_id": "C0000037",
+      "mapping_type": "exact",
+      "confidence_score": 0.9472249261211728,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600222",
+      "external_db": "UMLS",
+      "external_id": "C0000037",
+      "mapping_type": "exact",
+      "confidence_score": 0.9039173141305555,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600222",
+      "external_db": "ICD10",
+      "external_id": "Q03.7",
+      "mapping_type": "exact",
+      "confidence_score": 0.9024748856536192,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162238",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100038",
+      "mapping_type": "exact",
+      "confidence_score": 0.9152976167513895,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162238",
+      "external_db": "MedGen",
+      "external_id": "C0000038",
+      "mapping_type": "exact",
+      "confidence_score": 0.9884778094040285,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162238",
+      "external_db": "UMLS",
+      "external_id": "C0000038",
+      "mapping_type": "exact",
+      "confidence_score": 0.9254609288894833,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162238",
+      "external_db": "ICD10",
+      "external_id": "Q03.8",
+      "mapping_type": "exact",
+      "confidence_score": 0.9414255116895308,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173939",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100039",
+      "mapping_type": "exact",
+      "confidence_score": 0.9075999979851143,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173939",
+      "external_db": "MedGen",
+      "external_id": "C0000039",
+      "mapping_type": "exact",
+      "confidence_score": 0.9819407036307501,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173939",
+      "external_db": "UMLS",
+      "external_id": "C0000039",
+      "mapping_type": "exact",
+      "confidence_score": 0.9256340683990847,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173939",
+      "external_db": "ICD10",
+      "external_id": "Q03.9",
+      "mapping_type": "exact",
+      "confidence_score": 0.9465886581280274,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143930",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100040",
+      "mapping_type": "exact",
+      "confidence_score": 0.941560206067915,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143930",
+      "external_db": "MedGen",
+      "external_id": "C0000040",
+      "mapping_type": "exact",
+      "confidence_score": 0.9462081831893098,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143930",
+      "external_db": "UMLS",
+      "external_id": "C0000040",
+      "mapping_type": "exact",
+      "confidence_score": 0.929748598487299,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "143930",
+      "external_db": "ICD10",
+      "external_id": "Q04.0",
+      "mapping_type": "exact",
+      "confidence_score": 0.9702251736838975,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219741",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100041",
+      "mapping_type": "exact",
+      "confidence_score": 0.9843141046465634,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219741",
+      "external_db": "MedGen",
+      "external_id": "C0000041",
+      "mapping_type": "exact",
+      "confidence_score": 0.91132333137563,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219741",
+      "external_db": "UMLS",
+      "external_id": "C0000041",
+      "mapping_type": "exact",
+      "confidence_score": 0.9545779615925537,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "219741",
+      "external_db": "ICD10",
+      "external_id": "Q04.1",
+      "mapping_type": "exact",
+      "confidence_score": 0.9163156240480459,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334092",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100042",
+      "mapping_type": "exact",
+      "confidence_score": 0.9330013411336711,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334092",
+      "external_db": "MedGen",
+      "external_id": "C0000042",
+      "mapping_type": "exact",
+      "confidence_score": 0.9516221821313723,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334092",
+      "external_db": "UMLS",
+      "external_id": "C0000042",
+      "mapping_type": "exact",
+      "confidence_score": 0.929627664178496,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "334092",
+      "external_db": "ICD10",
+      "external_id": "Q04.2",
+      "mapping_type": "exact",
+      "confidence_score": 0.9897994061053876,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154743",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100043",
+      "mapping_type": "exact",
+      "confidence_score": 0.9013772768583016,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154743",
+      "external_db": "MedGen",
+      "external_id": "C0000043",
+      "mapping_type": "exact",
+      "confidence_score": 0.9401031421902243,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154743",
+      "external_db": "UMLS",
+      "external_id": "C0000043",
+      "mapping_type": "exact",
+      "confidence_score": 0.9050366212518584,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "154743",
+      "external_db": "ICD10",
+      "external_id": "Q04.3",
+      "mapping_type": "exact",
+      "confidence_score": 0.9396080620194973,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613952",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100044",
+      "mapping_type": "exact",
+      "confidence_score": 0.9617841280293391,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613952",
+      "external_db": "MedGen",
+      "external_id": "C0000044",
+      "mapping_type": "exact",
+      "confidence_score": 0.9901840720967512,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613952",
+      "external_db": "UMLS",
+      "external_id": "C0000044",
+      "mapping_type": "exact",
+      "confidence_score": 0.9591866008678008,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "613952",
+      "external_db": "ICD10",
+      "external_id": "Q04.4",
+      "mapping_type": "exact",
+      "confidence_score": 0.9312120943673333,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151668",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100045",
+      "mapping_type": "exact",
+      "confidence_score": 0.925004241272671,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151668",
+      "external_db": "MedGen",
+      "external_id": "C0000045",
+      "mapping_type": "exact",
+      "confidence_score": 0.99637324419591,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151668",
+      "external_db": "UMLS",
+      "external_id": "C0000045",
+      "mapping_type": "exact",
+      "confidence_score": 0.9924256366753348,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "151668",
+      "external_db": "ICD10",
+      "external_id": "Q04.5",
+      "mapping_type": "exact",
+      "confidence_score": 0.9896207689902292,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114526",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100046",
+      "mapping_type": "exact",
+      "confidence_score": 0.9606590667633239,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114526",
+      "external_db": "MedGen",
+      "external_id": "C0000046",
+      "mapping_type": "exact",
+      "confidence_score": 0.9872207175137734,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114526",
+      "external_db": "UMLS",
+      "external_id": "C0000046",
+      "mapping_type": "exact",
+      "confidence_score": 0.9951747145338117,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "114526",
+      "external_db": "ICD10",
+      "external_id": "Q04.6",
+      "mapping_type": "exact",
+      "confidence_score": 0.9416100177173288,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600232",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100047",
+      "mapping_type": "exact",
+      "confidence_score": 0.9216471167586728,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600232",
+      "external_db": "MedGen",
+      "external_id": "C0000047",
+      "mapping_type": "exact",
+      "confidence_score": 0.9462655039987657,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600232",
+      "external_db": "UMLS",
+      "external_id": "C0000047",
+      "mapping_type": "exact",
+      "confidence_score": 0.9444043897424912,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "600232",
+      "external_db": "ICD10",
+      "external_id": "Q04.7",
+      "mapping_type": "exact",
+      "confidence_score": 0.976644644323373,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162248",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100048",
+      "mapping_type": "exact",
+      "confidence_score": 0.9017398028138152,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162248",
+      "external_db": "MedGen",
+      "external_id": "C0000048",
+      "mapping_type": "exact",
+      "confidence_score": 0.9404406164831093,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162248",
+      "external_db": "UMLS",
+      "external_id": "C0000048",
+      "mapping_type": "exact",
+      "confidence_score": 0.9268728512907375,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "162248",
+      "external_db": "ICD10",
+      "external_id": "Q04.8",
+      "mapping_type": "exact",
+      "confidence_score": 0.9545889813895337,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173949",
+      "external_db": "Orphanet",
+      "external_id": "ORPHA100049",
+      "mapping_type": "exact",
+      "confidence_score": 0.9587456635448323,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173949",
+      "external_db": "MedGen",
+      "external_id": "C0000049",
+      "mapping_type": "exact",
+      "confidence_score": 0.9965185908422065,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173949",
+      "external_db": "UMLS",
+      "external_id": "C0000049",
+      "mapping_type": "exact",
+      "confidence_score": 0.9634572358348178,
+      "source": "OMIM mapping"
+    },
+    {
+      "omim_entry_id": "173949",
+      "external_db": "ICD10",
+      "external_id": "Q04.9",
+      "mapping_type": "exact",
+      "confidence_score": 0.9501818279303242,
+      "source": "OMIM mapping"
+    }
+  ],
+  "metadata": {
+    "total_entries": 50,
+    "total_phenotypes": 97,
+    "total_mappings": 200,
+    "extraction_date": "2025-09-11T13:02:56.543Z",
+    "source": "OMIM API (simulado para desenvolvimento)"
+  }
+}

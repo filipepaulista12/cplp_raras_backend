@@ -1,0 +1,446 @@
+// =====================================================================================
+// SCHEMA PRISMA MYSQL PARA CPLP-RARAS 
+// =====================================================================================
+// Schema baseado nas tabelas reais do servidor MySQL
+// Espelho local sincronizado com o servidor de produção
+// =====================================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// =====================================================================================
+// 1. PAÍSES CPLP - Comunidade dos Países de Língua Portuguesa
+// =====================================================================================
+
+model CplpCountry {
+  id                     Int      @id @default(autoincrement())
+  code                   String   @unique @db.VarChar(3)
+  name                   String   @db.VarChar(100)
+  name_pt                String   @map("name_pt") @db.VarChar(100)
+  flag_emoji             String?  @map("flag_emoji") @db.VarChar(10)
+  population             String?  @db.VarChar(50)
+  language               String?  @db.VarChar(20)
+  health_system          String?  @map("health_system") @db.Text
+  rare_disease_policy    String?  @map("rare_disease_policy") @db.Text
+  orphan_drugs_program   String?  @map("orphan_drugs_program") @db.Text
+  created_at             DateTime @default(now()) @map("created_at")
+
+  // Relacionamentos
+  orphaCplpEpidemiology OrphaCplpEpidemiology[]
+
+  @@map("cplp_countries")
+}
+
+// =====================================================================================
+// 2. DOENÇAS ORPHANET - Dados principais das doenças raras
+// =====================================================================================
+
+model OrphaDisease {
+  id                    Int      @id @default(autoincrement())
+  orphacode             String   @unique @db.VarChar(20)
+  name                  String   @db.VarChar(500)
+  name_pt               String?  @map("name_pt") @db.VarChar(500)
+  definition            String?  @db.Text
+  definition_pt         String?  @map("definition_pt") @db.Text
+  synonyms              String?  @db.Text
+  synonyms_pt           String?  @map("synonyms_pt") @db.Text
+  prevalence            String?  @db.VarChar(200)
+  inheritance           String?  @db.VarChar(200)
+  age_onset             String?  @map("age_onset") @db.VarChar(200)
+  icd10_codes           String?  @map("icd10_codes") @db.Text
+  omim_codes            String?  @map("omim_codes") @db.Text
+  umls_codes            String?  @map("umls_codes") @db.Text
+  mesh_codes            String?  @map("mesh_codes") @db.Text
+  gard_id               String?  @map("gard_id") @db.VarChar(50)
+  status                String?  @db.VarChar(50)
+  created_at            DateTime @default(now()) @map("created_at")
+  updated_at            DateTime @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  phenotypes            OrphaPhenotype[]
+  clinical_signs        OrphaClinicalSign[]
+  gene_associations     OrphaGeneAssociation[]
+  external_mappings     OrphaExternalMapping[]
+  medical_classifications OrphaMedicalClassification[]
+  linearisations        OrphaLinearisation[]
+  epidemiology          OrphaEpidemiology[]
+  natural_history       OrphaNaturalHistory[]
+  textual_information   OrphaTextualInformation[]
+  cplp_epidemiology     OrphaCplpEpidemiology[]
+  drug_associations     DrugDiseaseAssociation[]
+  hpo_associations      HpoDiseasAssociation[]
+
+  @@map("orpha_diseases")
+}
+
+// =====================================================================================
+// 3. FENÓTIPOS ORPHANET
+// =====================================================================================
+
+model OrphaPhenotype {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  hpo_id        String?      @map("hpo_id") @db.VarChar(20)
+  phenotype     String       @db.VarChar(500)
+  frequency     String?      @db.VarChar(100)
+  source        String?      @db.VarChar(200)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_phenotypes")
+}
+
+// =====================================================================================
+// 4. SINAIS CLÍNICOS ORPHANET
+// =====================================================================================
+
+model OrphaClinicalSign {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  clinical_sign String       @map("clinical_sign") @db.VarChar(500)
+  frequency     String?      @db.VarChar(100)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_clinical_signs")
+}
+
+// =====================================================================================
+// 5. ASSOCIAÇÕES GENÉTICAS ORPHANET
+// =====================================================================================
+
+model OrphaGeneAssociation {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  gene_symbol   String       @map("gene_symbol") @db.VarChar(50)
+  gene_name     String?      @map("gene_name") @db.VarChar(500)
+  association_type String?   @map("association_type") @db.VarChar(100)
+  hgnc_id       String?      @map("hgnc_id") @db.VarChar(20)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+  hpo_associations HpoGeneAssociation[]
+
+  @@map("orpha_gene_associations")
+}
+
+// =====================================================================================
+// 6. MAPEAMENTOS EXTERNOS ORPHANET
+// =====================================================================================
+
+model OrphaExternalMapping {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  source        String       @db.VarChar(100)
+  external_id   String       @map("external_id") @db.VarChar(100)
+  mapping_type  String?      @map("mapping_type") @db.VarChar(50)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_external_mappings")
+}
+
+// =====================================================================================
+// 7. CLASSIFICAÇÕES MÉDICAS ORPHANET
+// =====================================================================================
+
+model OrphaMedicalClassification {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  level         String       @db.VarChar(50)
+  classification String      @db.VarChar(500)
+  parent_id     String?      @map("parent_id") @db.VarChar(50)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_medical_classifications")
+}
+
+// =====================================================================================
+// 8. LINEARIZAÇÕES ORPHANET
+// =====================================================================================
+
+model OrphaLinearisation {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  type          String       @db.VarChar(100)
+  value         String       @db.VarChar(500)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_linearisations")
+}
+
+// =====================================================================================
+// 9. EPIDEMIOLOGIA ORPHANET
+// =====================================================================================
+
+model OrphaEpidemiology {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  type          String       @db.VarChar(100)
+  value         String       @db.VarChar(200)
+  geographic    String?      @db.VarChar(200)
+  source        String?      @db.VarChar(200)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_epidemiology")
+}
+
+// =====================================================================================
+// 10. HISTÓRIA NATURAL ORPHANET
+// =====================================================================================
+
+model OrphaNaturalHistory {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  type          String       @db.VarChar(100)
+  description   String       @db.Text
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_natural_history")
+}
+
+// =====================================================================================
+// 11. INFORMAÇÕES TEXTUAIS ORPHANET
+// =====================================================================================
+
+model OrphaTextualInformation {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  type          String       @db.VarChar(100)
+  text_content  String       @map("text_content") @db.Text
+  language      String?      @db.VarChar(10)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_textual_information")
+}
+
+// =====================================================================================
+// 12. EPIDEMIOLOGIA CPLP ESPECÍFICA
+// =====================================================================================
+
+model OrphaCplpEpidemiology {
+  id            Int          @id @default(autoincrement())
+  disease_id    Int          @map("disease_id")
+  country_id    Int          @map("country_id")
+  cases         Int?
+  prevalence    String?      @db.VarChar(200)
+  incidence     String?      @db.VarChar(200)
+  data_source   String?      @map("data_source") @db.VarChar(200)
+  year          Int?
+  notes         String?      @db.Text
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+  country       CplpCountry  @relation(fields: [country_id], references: [id], onDelete: Cascade)
+
+  @@map("orpha_cplp_epidemiology")
+}
+
+// =====================================================================================
+// 13. MEDICAMENTOS DRUGBANK
+// =====================================================================================
+
+model DrugbankDrug {
+  id                String     @id @default(uuid()) @db.Char(36)
+  drugbank_id       String     @unique @map("drugbank_id") @db.VarChar(20)
+  name              String     @db.VarChar(300)
+  name_pt           String?    @map("name_pt") @db.VarChar(300)
+  description       String?    @db.Text
+  description_pt    String?    @map("description_pt") @db.Text
+  cas_number        String?    @map("cas_number") @db.VarChar(50)
+  unii              String?    @db.VarChar(50)
+  average_mass      Float?     @map("average_mass")
+  monoisotopic_mass Float?     @map("monoisotopic_mass")
+  state             String?    @db.VarChar(50)
+  groups            String?    @db.Text
+  indication        String?    @db.Text
+  pharmacodynamics  String?    @db.Text
+  mechanism_action  String?    @map("mechanism_action") @db.Text
+  toxicity          String?    @db.Text
+  metabolism        String?    @db.Text
+  absorption        String?    @db.Text
+  half_life         String?    @map("half_life") @db.VarChar(200)
+  protein_binding   String?    @map("protein_binding") @db.VarChar(200)
+  route_elimination String?    @map("route_elimination") @db.Text
+  volume_distribution String?  @map("volume_distribution") @db.VarChar(200)
+  clearance         String?    @db.VarChar(200)
+  created_at        DateTime   @default(now()) @map("created_at")
+  updated_at        DateTime   @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  drug_associations DrugDiseaseAssociation[]
+  drug_interactions_drug1 DrugInteraction[] @relation("Drug1")
+  drug_interactions_drug2 DrugInteraction[] @relation("Drug2")
+
+  @@map("drugbank_drugs")
+}
+
+// =====================================================================================
+// 14. ASSOCIAÇÕES MEDICAMENTO-DOENÇA
+// =====================================================================================
+
+model DrugDiseaseAssociation {
+  id            String       @id @default(uuid()) @db.Char(36)
+  drug_id       String       @map("drug_id") @db.Char(36)
+  disease_id    Int          @map("disease_id")
+  association_type String    @map("association_type") @db.VarChar(100)
+  evidence      String?      @db.VarChar(100)
+  source        String?      @db.VarChar(200)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  drug          DrugbankDrug @relation(fields: [drug_id], references: [id], onDelete: Cascade)
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("drug_disease_associations")
+}
+
+// =====================================================================================
+// 15. INTERAÇÕES MEDICAMENTOSAS
+// =====================================================================================
+
+model DrugInteraction {
+  id                String       @id @default(uuid()) @db.Char(36)
+  drug1_id          String       @map("drug1_id") @db.Char(36)
+  drug2_id          String       @map("drug2_id") @db.Char(36)
+  interaction_type  String       @map("interaction_type") @db.VarChar(100)
+  interaction_type_pt String?    @map("interaction_type_pt") @db.VarChar(100)
+  severity          String       @db.VarChar(50)
+  severity_pt       String?      @map("severity_pt") @db.VarChar(50)
+  description       String?      @db.Text
+  description_pt    String?      @map("description_pt") @db.Text
+  mechanism         String?      @db.Text
+  mechanism_pt      String?      @map("mechanism_pt") @db.Text
+  effect            String?      @db.Text
+  effect_pt         String?      @map("effect_pt") @db.Text
+  management        String?      @db.Text
+  management_pt     String?      @map("management_pt") @db.Text
+  evidence          String?      @db.VarChar(100)
+  reference         String?      @db.Text
+  created_at        DateTime     @default(now()) @map("created_at")
+  updated_at        DateTime     @updatedAt @map("updated_at")
+
+  drug1             DrugbankDrug @relation("Drug1", fields: [drug1_id], references: [id], onDelete: Cascade)
+  drug2             DrugbankDrug @relation("Drug2", fields: [drug2_id], references: [id], onDelete: Cascade)
+
+  @@map("drug_interactions")
+}
+
+// =====================================================================================
+// 16. TERMOS HPO (Human Phenotype Ontology)
+// =====================================================================================
+
+model HpoTerm {
+  id            String       @id @default(uuid()) @db.Char(36)
+  hpo_id        String       @unique @map("hpo_id") @db.VarChar(20)
+  name          String       @db.VarChar(500)
+  name_pt       String?      @map("name_pt") @db.VarChar(500)
+  definition    String?      @db.Text
+  definition_pt String?      @map("definition_pt") @db.Text
+  synonyms      String?      @db.Text
+  synonyms_pt   String?      @map("synonyms_pt") @db.Text
+  is_obsolete   Boolean      @default(false) @map("is_obsolete")
+  created_at    DateTime     @default(now()) @map("created_at")
+  updated_at    DateTime     @updatedAt @map("updated_at")
+
+  // Relacionamentos
+  disease_associations HpoDiseasAssociation[]
+  gene_associations    HpoGeneAssociation[]
+  phenotype_associations HpoPhenotypeAssociation[]
+
+  @@map("hpo_terms")
+}
+
+// =====================================================================================
+// 17. ASSOCIAÇÕES HPO-DOENÇA
+// =====================================================================================
+
+model HpoDiseasAssociation {
+  id            String       @id @default(uuid()) @db.Char(36)
+  hpo_id        String       @map("hpo_id") @db.Char(36)
+  disease_id    Int          @map("disease_id")
+  evidence      String?      @db.VarChar(100)
+  frequency     String?      @db.VarChar(100)
+  source        String?      @db.VarChar(200)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  hpo_term      HpoTerm      @relation(fields: [hpo_id], references: [id], onDelete: Cascade)
+  disease       OrphaDisease @relation(fields: [disease_id], references: [id], onDelete: Cascade)
+
+  @@map("hpo_disease_associations")
+}
+
+// =====================================================================================
+// 18. ASSOCIAÇÕES HPO-GENE
+// =====================================================================================
+
+model HpoGeneAssociation {
+  id            String       @id @default(uuid()) @db.Char(36)
+  hpo_id        String       @map("hpo_id") @db.Char(36)
+  gene_id       Int          @map("gene_id")
+  evidence      String?      @db.VarChar(100)
+  source        String?      @db.VarChar(200)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  hpo_term      HpoTerm             @relation(fields: [hpo_id], references: [id], onDelete: Cascade)
+  gene          OrphaGeneAssociation @relation(fields: [gene_id], references: [id], onDelete: Cascade)
+
+  @@map("hpo_gene_associations")
+}
+
+// =====================================================================================
+// 19. ASSOCIAÇÕES HPO-FENÓTIPO
+// =====================================================================================
+
+model HpoPhenotypeAssociation {
+  id            String       @id @default(uuid()) @db.Char(36)
+  hpo_id        String       @map("hpo_id") @db.Char(36)
+  phenotype_description String @map("phenotype_description") @db.Text
+  frequency     String?      @db.VarChar(100)
+  evidence      String?      @db.VarChar(100)
+  source        String?      @db.VarChar(200)
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  hpo_term      HpoTerm      @relation(fields: [hpo_id], references: [id], onDelete: Cascade)
+
+  @@map("hpo_phenotype_associations")
+}
+
+// =====================================================================================
+// 20. LOG DE IMPORTAÇÕES ORPHANET
+// =====================================================================================
+
+model OrphaImportLog {
+  id            String       @id @default(uuid()) @db.Char(36)
+  import_type   String       @map("import_type") @db.VarChar(100)
+  start_time    DateTime     @map("start_time")
+  end_time      DateTime?    @map("end_time")
+  status        String       @db.VarChar(50) // success, error, running
+  records_processed Int?     @map("records_processed") @default(0)
+  records_inserted  Int?     @map("records_inserted") @default(0)
+  records_updated   Int?     @map("records_updated") @default(0)
+  error_message String?      @map("error_message") @db.Text
+  file_version  String?      @map("file_version") @db.VarChar(100)
+  notes         String?      @db.Text
+  created_at    DateTime     @default(now()) @map("created_at")
+
+  @@map("orpha_import_logs")
+}

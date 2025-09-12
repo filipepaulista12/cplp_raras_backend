@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genes Ensembl - CPLP Raras</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #764ba2;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-box {
+            background: rgba(255,255,255,0.95);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .stat-box .number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+        }
+        
+        .main-content {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .sidebar {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .biotype-badge {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .protein-coding {
+            background: #e8f5e8;
+            color: #388e3c;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .pagination a, .pagination span {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #667eea;
+        }
+        
+        .pagination .current {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .pagination a:hover {
+            background: #f0f0f0;
+            text-decoration: none;
+        }
+        
+        .search-box {
+            margin-bottom: 20px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .search-box input:focus {
+            border-color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧬 Genes Ensembl</h1>
+            <p><%= total.toLocaleString() %> genes com anotações genômicas completas</p>
+            <div>
+                <a href="/" class="nav-link">🏠 Início</a>
+                <a href="/uniprot-proteins" class="nav-link">🧪 Proteínas</a>
+                <a href="/gene-expression" class="nav-link">📊 Expressão</a>
+                <a href="/ema-medicines" class="nav-link">💊 Medicamentos</a>
+            </div>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-box">
+                <h3>Total de Genes</h3>
+                <div class="number"><%= total.toLocaleString() %></div>
+            </div>
+            <div class="stat-box">
+                <h3>Protein-coding</h3>
+                <div class="number">4.546</div>
+            </div>
+            <div class="stat-box">
+                <h3>Cromossomos</h3>
+                <div class="number">24</div>
+            </div>
+            <div class="stat-box">
+                <h3>Biotipos</h3>
+                <div class="number"><%= biotypes.length %></div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content">
+                <div class="search-box">
+                    <input type="text" placeholder="🔍 Buscar por símbolo ou nome do gene..." id="searchInput">
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ensembl ID</th>
+                                <th>Símbolo</th>
+                                <th>Nome</th>
+                                <th>Cromossomo</th>
+                                <th>Biotipo</th>
+                                <th>Protein-coding</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% genes.forEach(gene => { %>
+                            <tr>
+                                <td><code><%= gene.ensembl_id %></code></td>
+                                <td><strong><%= gene.gene_symbol || '-' %></strong></td>
+                                <td><%= gene.gene_name || '-' %></td>
+                                <td>Chr<%= gene.chromosome %></td>
+                                <td>
+                                    <span class="biotype-badge <%= gene.protein_coding ? 'protein-coding' : '' %>">
+                                        <%= gene.biotype %>
+                                    </span>
+                                </td>
+                                <td><%= gene.protein_coding ? '✅' : '❌' %></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <% if (currentPage > 1) { %>
+                        <a href="?page=<%= currentPage - 1 %>">‹ Anterior</a>
+                    <% } %>
+                    
+                    <span class="current">Página <%= currentPage %> de <%= totalPages %></span>
+                    
+                    <% if (currentPage < totalPages) { %>
+                        <a href="?page=<%= currentPage + 1 %>">Próxima ›</a>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>📊 Por Biotipo</h3>
+                <ul>
+                    <% biotypes.slice(0, 8).forEach(biotipo => { %>
+                    <li>
+                        <span><%= biotipo.biotype %></span>
+                        <span><%= Number(biotipo.count).toLocaleString() %></span>
+                    </li>
+                    <% }); %>
+                </ul>
+
+                <h3 style="margin-top: 25px;">🧬 Por Cromossomo</h3>
+                <ul>
+                    <% chromosomes.slice(0, 10).forEach(chr => { %>
+                    <li>
+                        <span>Chr <%= chr.chromosome %></span>
+                        <span><%= Number(chr.count).toLocaleString() %></span>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidade de busca simples
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const rows = document.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

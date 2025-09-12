@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteínas UniProt - CPLP Raras</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #764ba2;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+        }
+        
+        .main-content {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .sidebar {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .protein-id {
+            font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .function-cell {
+            max-width: 300px;
+            word-wrap: break-word;
+        }
+        
+        .organism-badge {
+            background: #e9ecef;
+            color: #495057;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .human {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .mouse {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .pagination a, .pagination span {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #667eea;
+        }
+        
+        .pagination .current {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .pagination a:hover {
+            background: #f0f0f0;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧬 Proteínas UniProt</h1>
+            <p><%= total.toLocaleString() %> proteínas anotadas do banco UniProt</p>
+            <div>
+                <a href="/" class="nav-link">🏠 Início</a>
+                <a href="/ensembl-genes" class="nav-link">🧬 Genes</a>
+                <a href="/gene-expression" class="nav-link">📊 Expressão</a>
+                <a href="/ema-medicines" class="nav-link">💊 EMA</a>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID UniProt</th>
+                                <th>Nome da Proteína</th>
+                                <th>Função</th>
+                                <th>Organismo</th>
+                                <th>Tamanho (aa)</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% proteins.forEach(protein => { %>
+                            <tr>
+                                <td><span class="protein-id"><%= protein.uniprot_id %></span></td>
+                                <td><strong><%= protein.protein_name %></strong></td>
+                                <td class="function-cell">
+                                    <%= protein.protein_function ? protein.protein_function.substring(0, 150) + (protein.protein_function.length > 150 ? '...' : '') : 'N/A' %>
+                                </td>
+                                <td>
+                                    <span class="organism-badge <%= protein.organism.includes('Homo sapiens') ? 'human' : protein.organism.includes('Mus musculus') ? 'mouse' : '' %>">
+                                        <%= protein.organism %>
+                                    </span>
+                                </td>
+                                <td><%= protein.sequence_length %></td>
+                                <td><%= protein.annotation_score %></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <% if (currentPage > 1) { %>
+                        <a href="?page=<%= currentPage - 1 %>">‹ Anterior</a>
+                    <% } %>
+                    
+                    <span class="current">Página <%= currentPage %> de <%= totalPages %></span>
+                    
+                    <% if (currentPage < totalPages) { %>
+                        <a href="?page=<%= currentPage + 1 %>">Próxima ›</a>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>🔬 Por Organismo</h3>
+                <ul>
+                    <% organisms.slice(0, 8).forEach(organism => { %>
+                    <li>
+                        <span><%= organism.organism.length > 25 ? organism.organism.substring(0, 25) + '...' : organism.organism %></span>
+                        <span><%= Number(organism.count).toLocaleString() %></span>
+                    </li>
+                    <% }); %>
+                </ul>
+
+                <h3 style="margin-top: 25px;">📏 Por Tamanho</h3>
+                <ul>
+                    <% sizeRanges.forEach(range => { %>
+                    <li>
+                        <span><%= range.range %></span>
+                        <span><%= Number(range.count).toLocaleString() %></span>
+                    </li>
+                    <% }); %>
+                </ul>
+
+                <h3 style="margin-top: 25px;">⭐ Por Score</h3>
+                <ul>
+                    <% scoreRanges.forEach(range => { %>
+                    <li>
+                        <span><%= range.range %></span>
+                        <span><%= Number(range.count).toLocaleString() %></span>
+                    </li>
+                    <% }); %>
+                </ul>
+
+                <div style="margin-top: 25px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">📊 Estatísticas</h4>
+                    <p><strong>Total:</strong> <%= total.toLocaleString() %></p>
+                    <p><strong>Organismos:</strong> <%= organisms.length %></p>
+                    <p><strong>Tamanho médio:</strong> <%= Math.round(avgLength) %> aa</p>
+                    <p><strong>Score médio:</strong> <%= avgScore.toFixed(1) %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

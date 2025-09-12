@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensaios Clínicos EU - CPLP Raras</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .nav-link {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #764ba2;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+        }
+        
+        .main-content {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .sidebar {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            height: fit-content;
+        }
+        
+        .sidebar h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .ongoing {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .completed {
+            background: #cce5ff;
+            color: #004085;
+        }
+        
+        .recruiting {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .terminated {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .phase-badge {
+            background: #e2e3e5;
+            color: #495057;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .pagination a, .pagination span {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #667eea;
+        }
+        
+        .pagination .current {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .pagination a:hover {
+            background: #f0f0f0;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🧪 Ensaios Clínicos EU</h1>
+            <p><%= total.toLocaleString() %> ensaios clínicos registrados na União Europeia</p>
+            <div>
+                <a href="/" class="nav-link">🏠 Início</a>
+                <a href="/ensembl-genes" class="nav-link">🧬 Genes</a>
+                <a href="/ema-medicines" class="nav-link">💊 EMA</a>
+                <a href="/who-data" class="nav-link">🌍 WHO</a>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="main-content">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Título do Estudo</th>
+                                <th>Condição</th>
+                                <th>Fase</th>
+                                <th>Status</th>
+                                <th>Participantes</th>
+                                <th>País</th>
+                                <th>Início</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% trials.forEach(trial => { %>
+                            <tr>
+                                <td><strong><%= trial.trial_title ? trial.trial_title.substring(0, 80) : 'N/A' %><%= trial.trial_title && trial.trial_title.length > 80 ? '...' : '' %></strong></td>
+                                <td><%= trial.medical_condition || 'N/A' %></td>
+                                <td><span class="phase-badge"><%= trial.trial_phase || 'N/A' %></span></td>
+                                <td>
+                                    <span class="status-badge <%= (trial.recruitment_status || '').toLowerCase().replace(' ', '-') %>">
+                                        <%= trial.recruitment_status || 'N/A' %>
+                                    </span>
+                                </td>
+                                <td><%= trial.target_enrollment ? trial.target_enrollment.toLocaleString() : 'N/A' %></td>
+                                <td><%= trial.sponsor_country || 'N/A' %></td>
+                                <td><%= trial.start_date ? new Date(trial.start_date).toLocaleDateString('pt-BR') : 'N/A' %></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <% if (currentPage > 1) { %>
+                        <a href="?page=<%= currentPage - 1 %>">‹ Anterior</a>
+                    <% } %>
+                    
+                    <span class="current">Página <%= currentPage %> de <%= totalPages %></span>
+                    
+                    <% if (currentPage < totalPages) { %>
+                        <a href="?page=<%= currentPage + 1 %>">Próxima ›</a>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <h3>🎯 Por Fase</h3>
+                <ul>
+                    <% phases.forEach(phase => { %>
+                    <li>
+                        <span><%= phase.trial_phase || 'N/A' %></span>
+                        <span><%= Number(phase.count).toLocaleString() %></span>
+                    </li>
+                    <% }); %>
+                </ul>
+
+                <h3 style="margin-top: 25px;">📊 Por Status</h3>
+                <ul>
+                    <% statuses.slice(0, 8).forEach(status => { %>
+                    <li>
+                        <span><%= status.recruitment_status %></span>
+                        <span><%= Number(status.count).toLocaleString() %></span>
+                    </li>
+                    <% }); %>
+                </ul>
+
+                <h3 style="margin-top: 25px;">🌍 Por País</h3>
+                <ul>
+                    <% countries.slice(0, 10).forEach(country => { %>
+                    <li>
+                        <span><%= country.sponsor_country || 'N/A' %></span>
+                        <span><%= Number(country.count).toLocaleString() %></span>
+                    </li>
+                    <% }); %>
+                </ul>
+
+                <div style="margin-top: 25px; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">📈 Estatísticas</h4>
+                    <p><strong>Total:</strong> <%= total.toLocaleString() %></p>
+                    <p><strong>Fases:</strong> <%= phases.length %></p>
+                    <p><strong>Países:</strong> <%= countries.length %></p>
+                    <p><strong>Participantes:</strong> <%= totalParticipants.toLocaleString() %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

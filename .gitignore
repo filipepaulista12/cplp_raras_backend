@@ -58,5 +58,24 @@ temp/
 prisma/dev.db
 prisma/dev.db-journal
 
-# Database files - mantendo para demonstração
-# database/*.db
+# Large database files (>100MB) - excedem limite GitHub
+**/cplp_raras_real.db
+**/prisma_database_cplp_raras_real.db
+backup_servidor_completo.sql
+
+# Prisma binaries (auto-downloaded)
+**/*.dll.node
+**/libquery-engine
+**/schema-engine*
+**/query_engine-*
+
+# Large log files (>10MB)
+**/*-2025-*.log
+
+# Keep smaller databases and backups
+!database/Dump20250903.sql
+!backup_cplp_raras_20250908.sql
+!**/*test*.db
+!**/*backup*.db
+!**/*synchronized*.db
+!database/gard_dev.db

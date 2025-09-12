@@ -1,0 +1,58 @@
+{
+  "data_validacao": "2025-09-11T13:37:29.710Z",
+  "fase": "FASE 1 - VALIDAÇÃO FINAL COMPLETA",
+  "score_final": 100,
+  "score_maximo": 100,
+  "status": "APROVADO_FASE2",
+  "sistema_completo": {
+    "total_registros": 82388,
+    "crescimento_absoluto": 17095,
+    "crescimento_percentual": 26,
+    "componentes": {
+      "countries": 9,
+      "diseases": 11239,
+      "hpo_terms": 19662,
+      "clinvar_variants": 100,
+      "clinvar_genes": 10,
+      "clinvar_submissions": 588,
+      "omim_entries": 50,
+      "omim_phenotypes": 97,
+      "omim_external_mappings": 200,
+      "drugbank_drugs": 409,
+      "hpo_disease_associations": 50024
+    }
+  },
+  "integracao_genomica": {
+    "clinvar": {
+      "total_variants": 100,
+      "unique_genes": 10,
+      "with_significance": 100
+    },
+    "omim": {
+      "total_entries": 50,
+      "unique_omim_ids": 50,
+      "unique_genes": 10,
+      "with_inheritance": 50
+    },
+    "genes_unicos_integrados": 13,
+    "performance_ms": 10
+  },
+  "interoperabilidade": {
+    "mapeamentos_omim": 4,
+    "mapeamentos_orpha": 6331,
+    "total_mapeamentos": 6531
+  },
+  "criterios_avaliacao": {
+    "sistema_base": true,
+    "genomica_integrada": true,
+    "performance_ok": true,
+    "interoperavel": true,
+    "expansao_significativa": true
+  },
+  "preparacao_fase2": {
+    "pronto_expansao_massiva": true,
+    "sistema_operacional": true,
+    "fundacao_genomica_estabelecida": true,
+    "arquitetura_escalavel": true
+  }
+}

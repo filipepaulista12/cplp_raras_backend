@@ -1,0 +1,128 @@
+{
+  "data_auditoria": "2025-09-11T13:41:00.032Z",
+  "problemas_identificados": [
+    {
+      "componente": "Orphanet Clinical Signs",
+      "problema": "Tabela completamente vazia - dados não foram carregados",
+      "impacto": "Alto - perda de informações clínicas essenciais",
+      "registros_esperados": "50,000+",
+      "registros_atuais": 0
+    },
+    {
+      "componente": "Orphanet Epidemiology",
+      "problema": "Dados epidemiológicos não carregados",
+      "impacto": "Alto - sem dados de prevalência e incidência",
+      "registros_esperados": "20,000+",
+      "registros_atuais": 0
+    },
+    {
+      "componente": "Orphanet Phenotypes",
+      "problema": "Fenótipos não carregados da API Orphanet",
+      "impacto": "Crítico - sem associações fenótipo-doença",
+      "registros_esperados": "100,000+",
+      "registros_atuais": 0
+    },
+    {
+      "componente": "HPO Phenotype Associations",
+      "problema": "Associações fenótipo-HPO não carregadas",
+      "impacto": "Médio - reduz capacidade de busca por fenótipos",
+      "registros_esperados": "200,000+",
+      "registros_atuais": 0
+    },
+    {
+      "componente": "ClinVar Variants",
+      "problema": "CRÍTICO - Apenas 100 variantes carregadas (deveria ter 1M+)",
+      "impacto": "Crítico - base genômica insuficiente",
+      "registros_esperados": "1,000,000+",
+      "registros_atuais": 100,
+      "solucao": "Implementar download completo da API ClinVar"
+    },
+    {
+      "componente": "ClinVar HPO Associations",
+      "problema": "Associações ClinVar-HPO não estabelecidas",
+      "impacto": "Alto - sem integração fenótipo-genótipo",
+      "registros_esperados": "500,000+",
+      "registros_atuais": 0
+    },
+    {
+      "componente": "OMIM Entries",
+      "problema": "CRÍTICO - Apenas 50 entradas OMIM (deveria ter 25K+)",
+      "impacto": "Crítico - cobertura genômica insuficiente",
+      "registros_esperados": "25,000+",
+      "registros_atuais": 50,
+      "solucao": "Implementar acesso completo à API OMIM"
+    },
+    {
+      "componente": "OMIM HPO Associations",
+      "problema": "Associações OMIM-HPO não estabelecidas",
+      "impacto": "Alto - sem linking genótipo-fenótipo",
+      "registros_esperados": "100,000+",
+      "registros_atuais": 0
+    },
+    {
+      "componente": "Drug Disease Associations",
+      "problema": "Associações medicamento-doença não carregadas",
+      "impacto": "Alto - sem recomendações terapêuticas",
+      "registros_esperados": "50,000+",
+      "registros_atuais": 0
+    }
+  ],
+  "dados_completos": [
+    {
+      "componente": "Orphanet Diseases",
+      "status": "COMPLETO",
+      "registros": 11239,
+      "qualidade": "Boa"
+    },
+    {
+      "componente": "HPO Terms",
+      "status": "COMPLETO",
+      "registros": 19662,
+      "qualidade": "Excelente"
+    },
+    {
+      "componente": "HPO Disease Associations",
+      "status": "COMPLETO",
+      "registros": 50024,
+      "qualidade": "Excelente"
+    }
+  ],
+  "dados_incompletos": [],
+  "recomendacoes": [
+    {
+      "prioridade": "CRÍTICA",
+      "acao": "Implementar download completo ClinVar",
+      "detalhes": "Configurar acesso à API oficial ClinVar para obter 1M+ variantes",
+      "impacto": "Fundamental para credibilidade da base genômica",
+      "tempo_estimado": "2-3 dias"
+    },
+    {
+      "prioridade": "CRÍTICA",
+      "acao": "Implementar acesso completo OMIM",
+      "detalhes": "Configurar licença e API OMIM para obter 25K+ entradas",
+      "impacto": "Essencial para cobertura genômica completa",
+      "tempo_estimado": "3-5 dias"
+    },
+    {
+      "prioridade": "ALTA",
+      "acao": "Completar dados Orphanet",
+      "detalhes": "Carregar fenótipos, epidemiologia e sinais clínicos",
+      "impacto": "Melhora significativa da qualidade clínica",
+      "tempo_estimado": "1-2 dias"
+    },
+    {
+      "prioridade": "ALTA",
+      "acao": "Estabelecer associações HPO",
+      "detalhes": "Criar links ClinVar-HPO e OMIM-HPO para integração",
+      "impacto": "Habilita busca por fenótipos",
+      "tempo_estimado": "1 dia"
+    },
+    {
+      "prioridade": "MÉDIA",
+      "acao": "Carregar associações medicamento-doença",
+      "detalhes": "Completar dados DrugBank com indicações terapêuticas",
+      "impacto": "Adiciona valor clínico significativo",
+      "tempo_estimado": "1 dia"
+    }
+  ]
+}

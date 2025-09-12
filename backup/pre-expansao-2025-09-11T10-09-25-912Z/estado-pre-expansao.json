@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-09-11T10:09:28.054Z",
+  "versao": "1.0 - Pre-expansão FAIR",
+  "mysql_stats": {
+    "cplp_countries": 9,
+    "hpo_terms": 19662,
+    "orpha_diseases": 11239,
+    "drugbank_drugs": 409,
+    "drug_interactions": 193,
+    "hpo_disease_associations": 50024,
+    "hpo_gene_associations": 24501
+  },
+  "sqlite_stats": {
+    "cplpCountry": 9,
+    "hpoTerm": 19662,
+    "rareDisease": 11239,
+    "drugbankDrug": 409,
+    "drugInteraction": 193,
+    "hpoDiseasAssociation": 9280,
+    "hpoGeneAssociation": 24501
+  },
+  "sincronizacao": {
+    "cplp_countries": "100.0%",
+    "hpo_terms": "100.0%",
+    "orpha_diseases": "100.0%",
+    "drugbank_drugs": "100.0%",
+    "drug_interactions": "100.0%",
+    "hpo_disease_associations": "18.6%",
+    "hpo_gene_associations": "100.0%"
+  },
+  "status": "Sistema pronto para expansão FAIR",
+  "observacoes": [
+    "6/7 tabelas com sincronização perfeita",
+    "hpo_disease_associations com limitação conhecida de mapeamentos OMIM",
+    "Sistema funcional para pesquisa científica",
+    "Base sólida para integração de APIs externas"
+  ]
+}
